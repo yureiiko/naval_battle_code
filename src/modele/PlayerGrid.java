@@ -1,17 +1,22 @@
 package modele;
 
+import java.util.Random;
+
 /**
  * @author Kularajasingam Kosakan
  */
 public class PlayerGrid extends Grid{
-    /*public PlayerGrid(){
-        this.mat;
+    public PlayerGrid(){
+        //this.mat;
 
     }
     public void alea() {
-        for(int i=0; i<tab.length; i++){
-            for(int j=0; j<tab.length; j++)
-                int random = (int);
-        }
-    }*/
+        int col = new Random(15).nextInt();
+        int lig = new Random(15).nextInt();
+        mat[lig][col]="|#";
+    }
+    public static void main(String[] args) {
+
+
+    }
 }
