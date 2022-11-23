@@ -4,7 +4,7 @@ package modele;
  * @author Kularajasingam Kosakan
  */
 public class PlayerGrid extends Grid{
-    public PlayerGrid(){
+    /*public PlayerGrid(){
         this.mat;
 
     }
@@ -13,5 +13,5 @@ public class PlayerGrid extends Grid{
             for(int j=0; j<tab.length; j++)
                 int random = (int);
         }
-    }
+    }*/
 }
