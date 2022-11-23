@@ -7,7 +7,7 @@ public class Grid {
 
         for (int i=0;i<14;i++){
             for(int j=0;j<14;j++){
-                mat[i][j]="|  |";
+                mat[i][j]="| ";
             }
         }
     }
