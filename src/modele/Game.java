@@ -1,7 +1,5 @@
 package modele;
 
-import java.util.Scanner;
-
 /**
  * Class Game
  * @author FLEURY CALAIS Camille
@@ -16,13 +14,7 @@ public class Game {
         gridEnemy = new EnemyGrid[2];
     }
 
-    public String [] fire() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the target column : ");
-        String targCol = scanner.next();
-        System.out.println("Enter the target line : ");
-        String targLine = scanner.next();
+    public void fire(String targCol, String targLine) {
 
-        return new String[]{targCol, targLine};
     }
 }
