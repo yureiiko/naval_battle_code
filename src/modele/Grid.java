@@ -22,7 +22,7 @@ public class Grid {
             for (int j = 0; j < 15; j++) {
                 out =out + mat[i][j]+" ";
             }
-            out=out +" |";
+            out=out +"|";
         }
         return out ;
     }
