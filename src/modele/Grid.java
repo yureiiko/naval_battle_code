@@ -13,12 +13,12 @@ public class Grid {
     }
     @Override
     public String toString() {
-        String out ="";
+        String out =" 1 2 3 4 5 6 7 8 9 10 11 12 13 14\n";
         for (int i=0;i<14;i++) {
             for (int j = 0; j < 14; j++) {
                 out =out + mat[i][j]+" ";
             }
-            out=out+"\n";
+            out=out+"\n"+i+1+" ";
         }
         return out ;
     }
