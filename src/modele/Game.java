@@ -19,7 +19,7 @@ public class Game {
     public void fire(String targCol, String targLine) {
 
     }
-
+/*
     public boolean start(){
         String x;
 
@@ -38,5 +38,5 @@ public class Game {
             default  : return false;
         }
 
-    }
+    }*/
 }

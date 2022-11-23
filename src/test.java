@@ -1,10 +1,10 @@
 import modele.Grid;
+import modele.PlayerGrid;
 
 public class test {
 
     public static void main(String [] args) {
-        Grid grid = new Grid();
-        grid.fill();
+        PlayerGrid grid = new PlayerGrid();
         System.out.println(grid);
     }
 
