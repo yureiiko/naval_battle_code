@@ -22,6 +22,7 @@ public class Game {
 
     public boolean start(){
         String x;
+
         Scanner sc =new Scanner(System.in);
         System.out.println("--------------------Game : BattleShip--------------------\n");
         System.out.println("You will have 2 grids, one that is yours the other one is the rival's grid\n");
