@@ -25,6 +25,7 @@ public class GameMaster {
      * Method gamerPlay
      */
     public void gamerPlay(){
+        System.out.print(navalBattle.getPlayerGrid(0)+"\n");
         ini:
             try {
                 System.out.print("\nEnter the target column : ");
