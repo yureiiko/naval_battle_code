@@ -3,6 +3,7 @@ package modele;
 import java.util.Random;
 
 /**
+ * Class PlayerGrid
  * @author Kularajasingam Kosakan
  */
 public class PlayerGrid extends Grid{
