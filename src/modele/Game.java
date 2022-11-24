@@ -11,15 +11,24 @@ public class Game {
     PlayerGrid [] gridPlayer;
     EnemyGrid [] gridEnemy;
 
+    /**
+     * Constructor
+     */
     public Game() {
         gridPlayer = new PlayerGrid[2];
         gridEnemy = new EnemyGrid[2];
     }
 
-    public void fire(String targCol, String targLine) {
+    /**
+     * Method fire
+     * @param gridInd int
+     * @param targCol int
+     * @param targLine int
+     */
+    public void fire(int gridInd, int targCol, int targLine) {
 
     }
-/*
+
     public boolean start(){
         String x;
 
@@ -33,10 +42,9 @@ public class Game {
         System.out.println("If you want to play enter 'y' otherwise enter 'n'\n" );
         x=sc.next();
         switch (x){
-            case 'y': return true;
-            case 'n' : return false;
+            case "y": return true;
             default  : return false;
         }
 
-    }*/
+    }
 }
