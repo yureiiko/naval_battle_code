@@ -20,13 +20,23 @@ public class Game {
     }
 
     /**
+     * Method getPlayerGrid
+     * @param ind int
+     * @return PlayerGrid
+     */
+    public PlayerGrid getPlayerGrid(int ind) {
+        return gridPlayer[ind];
+    }
+
+    /**
      * Method fire
      * @param gridInd int
      * @param targCol int
      * @param targLine int
+     * @return boolean
      */
-    public void fire(int gridInd, int targCol, int targLine) {
-
+    public boolean fire(int gridInd, int targCol, int targLine) {
+        return false;
     }
 
     public boolean start(){
