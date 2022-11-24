@@ -11,6 +11,7 @@ public class PlayerGrid extends Grid {
     public PlayerGrid() {
         super.fill();
         alea();
+        alea2();
     }
 
     public void alea() {
@@ -30,6 +31,22 @@ public class PlayerGrid extends Grid {
         }
         return true;
     }
+
+    public void alea2() {
+        int col = new Random().nextInt(14);
+        int lig = new Random().nextInt(14);
+        mat[lig][col] = "|#";
+    }
+
+
+
+
+
+
+
+
+
+
 
     /**
      * Method fire
