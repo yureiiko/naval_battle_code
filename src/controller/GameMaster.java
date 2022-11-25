@@ -2,6 +2,7 @@ package controller;
 
 import modele.Game;
 
+import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -32,15 +33,30 @@ public class GameMaster {
                 int col = scan.nextInt();
                 System.out.print("\nEnter the target line : ");
                 int line = scan.nextInt();
-                navalBattle.fire(2, col-1, line-1);
+                if (navalBattle.fire(0, col-1, line-1)) {
+                    System.out.print("HIT :D !\n");
+                } else {
+                    System.out.print("miss :( \n");
+                }
             } catch (IndexOutOfBoundsException e) {
                 System.out.print("\nEnter a number between 1 and 15");
                 break ini;
             }
     }
 
+    /**
+     * Method botPlay
+     */
     public void botPlay() {
-
+        System.out.print("The bot fire at : ");
+        int line = new Random().nextInt(14);
+        int col = new Random().nextInt(14);
+        System.out.print(line+";"+col+"\n");
+        if (navalBattle.fire(1, col-1, line-1)) {
+            System.out.print("and HIT\n");
+        } else {
+            System.out.print("and miss\n");
+        }
     }
 
 }
