@@ -5,6 +5,9 @@ package modele;
  */
 public class EnemyGrid extends Grid{
 
+    /**
+     * Constructor
+     */
     public EnemyGrid(){
         this.fill();
     }
