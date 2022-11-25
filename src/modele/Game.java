@@ -37,10 +37,14 @@ public class Game {
      * @param targLine int
      * @return boolean
      */
-    public boolean fire(int gridInd, int targCol, int targLine) {
+    public boolean fire(int gridInd, int targCol, int targLine) {//gridInd permet d'appeler l'indice de l'element du tableau
+        if (gridPlayer[gridInd].fire(targLine,targCol)) {
+            gridEnemy[gridInd].update(targLine,targCol,"|X");//call the method update and add X if ship hit
+            return true;
+        }
+        gridEnemy[gridInd].update(targLine,targCol,"|O");//update with 0 if no ship hit
         return false;
     }
-
     public boolean start(){
         String x;
 
