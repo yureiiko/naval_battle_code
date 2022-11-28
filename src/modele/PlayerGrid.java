@@ -55,7 +55,7 @@ public class PlayerGrid extends Grid {
      * @return
      */
     public boolean fire(int l, int c) {
-        if ((mat[l][c] != "| ") && (mat[l][c] != "|X")) {
+        if ((mat[l][c] != "| ") && (mat[l][c] != "|X") && (mat[l][c] != "|0")) {
             mat[l][c]="|X";
             return true;
         }

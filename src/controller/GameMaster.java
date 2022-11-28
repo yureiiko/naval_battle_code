@@ -27,14 +27,14 @@ public class GameMaster {
      */
     public void gamerPlay(){
         System.out.print(navalBattle.getPlayerGrid(0)+"\n");
-        System.out.print(navalBattle.getEnemyGrid(0)+"\n");
+        System.out.print(navalBattle.getEnemyGrid(1)+"\n");
         ini:
             try {
                 System.out.print("\nEnter the target column : ");
                 int col = scan.nextInt();
                 System.out.print("\nEnter the target line : ");
                 int line = scan.nextInt();
-                if (navalBattle.fire(0, col-1, line-1)) {
+                if (navalBattle.fire(1, col-1, line-1)) {
                     System.out.print("HIT :D !\n");
                 } else {
                     System.out.print("miss :( \n");
@@ -53,7 +53,7 @@ public class GameMaster {
         int line = new Random().nextInt(14);
         int col = new Random().nextInt(14);
         System.out.print(line+";"+col+"\n");
-        if (navalBattle.fire(1, col-1, line-1)) {
+        if (navalBattle.fire(0, col-1, line-1)) {
             System.out.print("and HIT\n");
         } else {
             System.out.print("and miss\n");
