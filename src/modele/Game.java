@@ -31,6 +31,15 @@ public class Game {
     }
 
     /**
+     * Method getEnemyGrid
+     * @param ind int
+     * @return EnemyGrid
+     */
+    public EnemyGrid getEnemyGrid(int ind) {
+        return gridEnemy[ind];
+    }
+
+    /**
      * Method fire
      * @param gridInd int
      * @param targCol int
