@@ -19,6 +19,8 @@ public class Game {
         gridEnemy = new EnemyGrid[2];
         gridPlayer[0] = new PlayerGrid();
         gridPlayer[1] = new PlayerGrid();
+        gridEnemy[0] = new EnemyGrid();
+        gridEnemy[1] = new EnemyGrid();
     }
 
     /**
