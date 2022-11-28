@@ -60,4 +60,27 @@ public class GameMaster {
         }
     }
 
+    /**
+     * Method letsPlay
+     * @return String
+     */
+    public String letsPlay() {
+        String out = navalBattle.check();
+        while (out == null) {
+            this.gamerPlay();
+            this.botPlay();
+            out = navalBattle.check();
+        }
+        return out;
+    }
+
+    /**
+     * Method main
+     * @param args String []
+     */
+    public static void main(String [] args) {
+        GameMaster gm = new GameMaster();
+        System.out.println("The "+gm.letsPlay()+" win !!!");
+    }
+
 }

@@ -23,7 +23,7 @@ public class PlayerGrid extends Grid {
     public boolean check() {
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 15; j++) {
-                if (mat[i][j] != "| ") {
+                if (mat[i][j] != "| " && mat[i][j] != "|X") {
                     return false;
                 }
             }

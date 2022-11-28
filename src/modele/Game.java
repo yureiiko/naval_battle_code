@@ -40,6 +40,20 @@ public class Game {
     }
 
     /**
+     * Method check
+     * @return String
+     */
+    public String check() {
+        if (gridPlayer[0].check()) {
+            return "bot";
+        }
+        if (gridPlayer[1].check()) {
+            return "player";
+        }
+        return null;
+    }
+
+    /**
      * Method fire
      * @param gridInd int
      * @param targCol int
