@@ -1,6 +1,7 @@
 package controller;
 
 import modele.Game;
+import view.ConsoleDisplay;
 
 import java.util.Random;
 import java.util.Scanner;
@@ -11,8 +12,9 @@ import java.util.Scanner;
  */
 public class GameMaster {
 
-    Game navalBattle;
-    Scanner scan;
+    private Game navalBattle;
+    private Scanner scan;
+    private ConsoleDisplay displayer;
 
     /**
      * Constructor
@@ -20,27 +22,36 @@ public class GameMaster {
     public GameMaster() {
         navalBattle = new Game();
         scan = new Scanner(System.in);
+        displayer = new ConsoleDisplay();
+    }
+
+    /**
+     * Method getDisplayer
+     * @return ConsoleDisplay
+     */
+    public ConsoleDisplay getDisplayer() {
+        return displayer;
     }
 
     /**
      * Method gamerPlay
      */
     public void gamerPlay(){
-        System.out.print(navalBattle.getPlayerGrid(0)+"\n");
-        System.out.print(navalBattle.getEnemyGrid(1)+"\n");
+        displayer.display(navalBattle.getPlayerGrid(0)+"\n");
+        displayer.display(navalBattle.getEnemyGrid(1)+"\n");
         ini:
             try {
-                System.out.print("\nEnter the target column : ");
+                displayer.display("\nEnter the target column : ");
                 int col = scan.nextInt();
-                System.out.print("\nEnter the target line : ");
+                displayer.display("\nEnter the target line : ");
                 int line = scan.nextInt();
                 if (navalBattle.fire(1, col-1, line-1)) {
-                    System.out.print("HIT :D !\n");
+                    displayer.display("HIT :D !\n");
                 } else {
-                    System.out.print("miss :( \n");
+                    displayer.display("miss :( \n");
                 }
             } catch (IndexOutOfBoundsException e) {
-                System.out.print("\nEnter a number between 1 and 15");
+                displayer.display("\nEnter a number between 1 and 15");
                 break ini;
             }
     }
@@ -49,14 +60,14 @@ public class GameMaster {
      * Method botPlay
      */
     public void botPlay() {
-        System.out.print("The bot fire at : ");
+        displayer.display("The bot fire at : ");
         int line = new Random().nextInt(14);
         int col = new Random().nextInt(14);
-        System.out.print(line+";"+col+"\n");
+        displayer.display(line+";"+col+"\n");
         if (navalBattle.fire(0, col-1, line-1)) {
-            System.out.print("and HIT\n");
+            displayer.display("and HIT\n");
         } else {
-            System.out.print("and miss\n");
+            displayer.display("and miss\n");
         }
     }
 
@@ -80,7 +91,7 @@ public class GameMaster {
      */
     public static void main(String [] args) {
         GameMaster gm = new GameMaster();
-        System.out.println("The "+gm.letsPlay()+" win !!!");
+        gm.getDisplayer().display("The "+gm.letsPlay()+" win !!!");
     }
 
 }
