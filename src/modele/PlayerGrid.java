@@ -8,12 +8,17 @@ import java.util.Random;
  */
 public class PlayerGrid extends Grid {
 
+
     public PlayerGrid() {
         super.fill();
         alea();
         alea2();
     }
 
+    /**
+     * Method alea
+     * 1st boat randomly placed
+     */
     public void alea() {
         int col = new Random().nextInt(14);
         int lig = new Random().nextInt(14);
@@ -32,21 +37,15 @@ public class PlayerGrid extends Grid {
         return true;
     }
 
+    /**
+     * Method alea2
+     * 2nd boat randomly placed
+     */
     public void alea2() {
         int col = new Random().nextInt(14);
         int lig = new Random().nextInt(14);
         mat[lig][col] = "|#";
     }
-
-
-
-
-
-
-
-
-
-
 
     /**
      * Method fire
