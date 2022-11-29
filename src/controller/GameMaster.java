@@ -51,7 +51,7 @@ public class GameMaster {
                     displayer.display("miss :( \n");
                 }
             } catch (IndexOutOfBoundsException e) {
-                displayer.display("\nEnter a number between 1 and 15");
+                displayer.display("\nEnter a number between 1 and 15\n");
                 break ini;
             }
     }
@@ -65,7 +65,7 @@ public class GameMaster {
                 displayer.display("The bot fire at : ");
                 int line = new Random().nextInt(14);
                 int col = new Random().nextInt(14);
-                displayer.display(line+";"+col+"\n");
+                displayer.display((line+1)+";"+(col+1)+"\n");
                 if (navalBattle.fire(0, col-1, line-1)) {
                     displayer.display("and HIT\n");
                 } else {
