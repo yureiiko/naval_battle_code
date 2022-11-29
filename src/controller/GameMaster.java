@@ -37,7 +37,7 @@ public class GameMaster {
      * Method gamerPlay
      */
     public void gamerPlay(){
-        displayer.display(navalBattle.getPlayerGrid(0)+"\n");
+        displayer.display(navalBattle.getPlayerGrid(0)+"\n\n");
         displayer.display(navalBattle.getEnemyGrid(1)+"\n");
         ini:
             try {
@@ -60,15 +60,20 @@ public class GameMaster {
      * Method botPlay
      */
     public void botPlay() {
-        displayer.display("The bot fire at : ");
-        int line = new Random().nextInt(14);
-        int col = new Random().nextInt(14);
-        displayer.display(line+";"+col+"\n");
-        if (navalBattle.fire(0, col-1, line-1)) {
-            displayer.display("and HIT\n");
-        } else {
-            displayer.display("and miss\n");
-        }
+        ini :
+            try {
+                displayer.display("The bot fire at : ");
+                int line = new Random().nextInt(14);
+                int col = new Random().nextInt(14);
+                displayer.display(line+";"+col+"\n");
+                if (navalBattle.fire(0, col-1, line-1)) {
+                    displayer.display("and HIT\n");
+                } else {
+                    displayer.display("and miss\n");
+                }
+            } catch (ArrayIndexOutOfBoundsException e) {
+                break ini;
+            }
     }
 
     /**
