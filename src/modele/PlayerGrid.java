@@ -30,12 +30,12 @@ public class PlayerGrid extends Grid {
         while (outer) {
             this.mat = save;
             Random ran = new Random();
-            int iniCol = ran.nextInt(15);
-            int iniLin = ran.nextInt(15);
+            int iniCol = ran.nextInt(14);
+            int iniLin = ran.nextInt(14);
             mat[iniLin][iniCol] = "|B";
             for (int i = 1; i < 7; i++) {
                 int col = iniCol + i;
-                if (col >= this.mat[0].length && col < 0 && this.mat[iniLin][col]=="| ") {
+                if (col > 14 && col < 0 && this.mat[iniLin][col]=="| ") {
                     break;
                 } else {
                     mat[iniLin][col] = "|B";
