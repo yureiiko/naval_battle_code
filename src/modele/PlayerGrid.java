@@ -11,8 +11,7 @@ public class PlayerGrid extends Grid {
 
     public PlayerGrid() {
         super.fill();
-        alea();
-        alea2();
+        aleaBattleship();
     }
 
     /**
@@ -23,6 +22,27 @@ public class PlayerGrid extends Grid {
         int col = new Random().nextInt(14);
         int lig = new Random().nextInt(14);
         mat[lig][col] = "|#";
+    }
+
+    public void aleaBattleship() {
+        String [][] save = this.mat; //voir java duplicate
+        boolean outer = true;
+        while (outer) {
+            this.mat = save;
+            Random ran = new Random();
+            int iniCol = ran.nextInt(15);
+            int iniLin = ran.nextInt(15);
+            mat[iniLin][iniCol] = "|B";
+            for (int i = 1; i < 7; i++) {
+                int col = iniCol + i;
+                if (col >= this.mat[0].length && col < 0 && this.mat[iniLin][col]=="| ") {
+                    break;
+                } else {
+                    mat[iniLin][col] = "|B";
+                }
+            }
+            outer=false;
+        }
     }
 
     public boolean check() {
