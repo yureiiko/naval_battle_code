@@ -7,9 +7,7 @@ import java.util.Random;
  * @author Kularajasingam Kosakan
  */
 public class PlayerGrid extends Grid {
-    /**
-     * Contructor
-     */
+
 
     public PlayerGrid() {
         super.fill();
@@ -18,7 +16,7 @@ public class PlayerGrid extends Grid {
 
     /**
      * Method alea
-     * 1st boat randomly placed
+     * 1st random boat
      */
     public void alea() {
         int col = new Random().nextInt(14);
@@ -26,25 +24,29 @@ public class PlayerGrid extends Grid {
         mat[lig][col] = "|#";
     }
 
-    public void aleaBattleship() {
+    public void aleaBoat(int length, String boatString) {
         String [][] save = this.mat; //voir java duplicate
         boolean outer = true;
         while (outer) {
             this.mat = save;
             Random ran = new Random();
-            int iniCol = ran.nextInt(15);
-            int iniLin = ran.nextInt(15);
-            mat[iniLin][iniCol] = "|B";
-            for (int i = 1; i < 7; i++) {
+            int iniCol = ran.nextInt(14);
+            int iniLin = ran.nextInt(14);
+            mat[iniLin][iniCol] = boatString;
+            for (int i = 1; i < length; i++) {
                 int col = iniCol + i;
-                if (col >= this.mat[0].length && col < 0 && this.mat[iniLin][col]=="| ") {
+                if (col > 14 && col < 0 && this.mat[iniLin][col]=="| ") {
                     break;
                 } else {
-                    mat[iniLin][col] = "|B";
+                    mat[iniLin][col] = boatString;
                 }
             }
             outer=false;
         }
+    }
+
+    public void aleaBattleship() {
+        aleaBoat(7, "|B");
     }
 
     public boolean check() {
