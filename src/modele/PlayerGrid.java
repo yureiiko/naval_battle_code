@@ -7,7 +7,9 @@ import java.util.Random;
  * @author Kularajasingam Kosakan
  */
 public class PlayerGrid extends Grid {
-
+    /**
+     * Contructor
+     */
 
     public PlayerGrid() {
         super.fill();
