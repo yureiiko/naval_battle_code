@@ -1,0 +1,62 @@
+Index: src/modele/EnemyGrid.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package modele;\r\n\r\n/**\r\n * Class EnemyGrid\r\n */\r\npublic class EnemyGrid extends Grid{\r\n\r\n    /**\r\n     * Constructor\r\n     */\r\n    public EnemyGrid(){\r\n        this.fill();\r\n    }\r\n\r\n    /**\r\n     * Method update\r\n     * @param l int\r\n     * @param c int\r\n     * @param toAdd String\r\n     */\r\n    public void update(int l, int c, String toAdd) {\r\n        mat[l][c] = toAdd;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/modele/EnemyGrid.java b/src/modele/EnemyGrid.java
+--- a/src/modele/EnemyGrid.java	(revision 99afbca5eae2626ccf8b7c82ed6b9b668447bacd)
++++ b/src/modele/EnemyGrid.java	(date 1669727916775)
+@@ -17,6 +17,7 @@
+      * @param l int
+      * @param c int
+      * @param toAdd String
++     *
+      */
+     public void update(int l, int c, String toAdd) {
+         mat[l][c] = toAdd;
+Index: src/modele/PlayerGrid.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package modele;\r\n\r\nimport java.util.Random;\r\n\r\n/**\r\n * Class PlayerGrid\r\n * @author Kularajasingam Kosakan\r\n */\r\npublic class PlayerGrid extends Grid {\r\n\r\n    public PlayerGrid() {\r\n        super.fill();\r\n        alea();\r\n        alea2();\r\n    }\r\n\r\n    public void alea() {\r\n        int col = new Random().nextInt(14);\r\n        int lig = new Random().nextInt(14);\r\n        mat[lig][col] = \"|#\";\r\n    }\r\n\r\n    public boolean check() {\r\n        for (int i = 0; i < 15; i++) {\r\n            for (int j = 0; j < 15; j++) {\r\n                if (mat[i][j] != \"| \" && mat[i][j] != \"|X\") {\r\n                    return false;\r\n                }\r\n            }\r\n\r\n        }\r\n        return true;\r\n    }\r\n\r\n    public void alea2() {\r\n        int col = new Random().nextInt(14);\r\n        int lig = new Random().nextInt(14);\r\n        mat[lig][col] = \"|#\";\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    /**\r\n     * Method fire\r\n     * @param c int\r\n     * @param l int\r\n     * @return\r\n     */\r\n    public boolean fire(int l, int c) {\r\n        if ((mat[l][c] != \"| \") && (mat[l][c] != \"|X\")) {\r\n            mat[l][c]=\"|X\";\r\n            return true;\r\n        }\r\n        mat[l][c]=\"|O\";\r\n        return false;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/modele/PlayerGrid.java b/src/modele/PlayerGrid.java
+--- a/src/modele/PlayerGrid.java	(revision 99afbca5eae2626ccf8b7c82ed6b9b668447bacd)
++++ b/src/modele/PlayerGrid.java	(date 1669728415101)
+@@ -7,7 +7,11 @@
+  * @author Kularajasingam Kosakan
+  */
+ public class PlayerGrid extends Grid {
+-
++    /**
++     * Constructor PlayerGrid
++     * fill matrix
++     * Call Method alea
++     */
+     public PlayerGrid() {
+         super.fill();
+         alea();
+@@ -20,6 +24,12 @@
+         mat[lig][col] = "|#";
+     }
+ 
++    /**
++     * Method check
++     * @return boolean
++     * Verify ship presence
++     *
++     */
+     public boolean check() {
+         for (int i = 0; i < 15; i++) {
+             for (int j = 0; j < 15; j++) {
+@@ -53,6 +63,7 @@
+      * @param c int
+      * @param l int
+      * @return
++     * Method fire that write where the player hit
+      */
+     public boolean fire(int l, int c) {
+         if ((mat[l][c] != "| ") && (mat[l][c] != "|X")) {

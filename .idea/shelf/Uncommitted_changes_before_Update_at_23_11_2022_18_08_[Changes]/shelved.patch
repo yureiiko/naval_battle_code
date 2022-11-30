@@ -1,0 +1,43 @@
+Index: src/modele/PlayerGrid.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/modele/PlayerGrid.java b/src/modele/PlayerGrid.java
+--- a/src/modele/PlayerGrid.java	
++++ b/src/modele/PlayerGrid.java	
+@@ -5,13 +5,14 @@
+  */
+ public class PlayerGrid extends Grid{
+     public PlayerGrid(){
+-        this.mat;
++        this.mat=mat;
+ 
+     }
+     public void alea() {
+-        for(int i=0; i<tab.length; i++){
+-            for(int j=0; j<tab.length; j++)
+-                int random = (int);
++        for(int i=0; i<mat.length; i++){
++            for(int j=0; j<mat.length; j++)
++                double mat = 0;
++                mat = Math.random()*10;
+         }
+     }
+ }
+Index: src/modele/EnemyGrid.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/modele/EnemyGrid.java b/src/modele/EnemyGrid.java
+--- a/src/modele/EnemyGrid.java	
++++ b/src/modele/EnemyGrid.java	
+@@ -3,6 +3,6 @@
+ public class EnemyGrid extends Grid{
+ 
+     public EnemyGrid(){
+-        this.mat
++
+     }
+ }
