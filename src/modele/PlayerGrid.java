@@ -35,7 +35,7 @@ public class PlayerGrid extends Grid {
             mat[iniLin][iniCol] = boatString;
             for (int i = 1; i < length; i++) {
                 int col = iniCol + i;
-                if (col > 14 && col < 0 && this.mat[iniLin][col]!="| ") {
+                if (col > 14 || col < 0 || this.mat[iniLin][col]!="| ") {
                     break;
                 } else {
                     mat[iniLin][col] = boatString;
@@ -46,7 +46,9 @@ public class PlayerGrid extends Grid {
     }
 
     public void aleaBattleship() {
-        aleaBoat(7, "|B");
+        for (int i=0 ; i<3 ; i++) {
+            aleaBoat(7, "|B");
+        }
     }
 
     public boolean check() {

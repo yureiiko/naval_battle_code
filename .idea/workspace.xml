@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="584b8abe-ced6-4948-bf55-9a966a1fcc29" name="Changes" comment="Class PlayerGrid" />
+    <list default="true" id="584b8abe-ced6-4948-bf55-9a966a1fcc29" name="Changes" comment="Minor modification">
+      <change beforePath="$PROJECT_DIR$/out/production/naval_battle_code/modele/PlayerGrid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/naval_battle_code/modele/PlayerGrid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/PlayerGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/PlayerGrid.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,6 +27,10 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
   <component name="RunManager" selected="Application.GameMaster">
     <configuration name="GameMaster" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -125,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669822507891</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Minor modification">
+      <created>1669823661287</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1669823661287</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,13 +164,15 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="tz" />
     <MESSAGE value="Class EnemyGrid" />
     <MESSAGE value="Method fire that write where the player hit" />
     <MESSAGE value="Class PlayerGrid" />
-    <option name="LAST_COMMIT_MESSAGE" value="Class PlayerGrid" />
+    <MESSAGE value="Minor modification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor modification" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
