@@ -46,9 +46,7 @@ public class PlayerGrid extends Grid {
     }
 
     public void aleaBattleship() {
-        for (int i=0 ; i<3 ; i++) {
-            aleaBoat(7, "|B");
-        }
+        aleaBoat(7, "|B");
     }
 
     public boolean check() {
