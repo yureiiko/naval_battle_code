@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="584b8abe-ced6-4948-bf55-9a966a1fcc29" name="Changes" comment="Minor modification">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_11_2022_18_08__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_23_11_2022_18_08__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_11_2022_17_59__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_11_2022_17_59__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_2022_14_28__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_2022_14_28__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_2022_14_46__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_29_11_2022_14_46__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/modele/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Game.java" afterDir="false" />
+    <list default="true" id="584b8abe-ced6-4948-bf55-9a966a1fcc29" name="Changes" comment="add method aleaboats">
+      <change beforePath="$PROJECT_DIR$/out/production/naval_battle_code/modele/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/naval_battle_code/modele/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/naval_battle_code/modele/PlayerGrid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/naval_battle_code/modele/PlayerGrid.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modele/PlayerGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/PlayerGrid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,12 +29,12 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.GameMaster">
     <configuration name="GameMaster" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="controller.GameMaster" />
@@ -198,7 +195,8 @@
     <MESSAGE value="Method fire that write where the player hit" />
     <MESSAGE value="Class PlayerGrid" />
     <MESSAGE value="Minor modification" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor modification" />
+    <MESSAGE value="add method aleaboats" />
+    <option name="LAST_COMMIT_MESSAGE" value="add method aleaboats" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

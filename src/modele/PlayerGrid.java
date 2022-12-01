@@ -12,17 +12,11 @@ public class PlayerGrid extends Grid {
     public PlayerGrid() {
         super.fill();
         aleaBattleship();
+        aleaCruiser();
+        aleaDestroyer();
+        aleaSubmarine();
     }
 
-    /**
-     * Method alea
-     * 1st random boat
-     */
-    public void alea() {
-        int col = new Random().nextInt(14);
-        int lig = new Random().nextInt(14);
-        mat[lig][col] = "|#";
-    }
 
     public void aleaBoat(int length, String boatString) {
         String [][] save = this.mat; //voir java duplicate
@@ -45,8 +39,33 @@ public class PlayerGrid extends Grid {
         }
     }
 
+    /**
+     * method aleaBattleship
+     * Create a ship of 7 boxes that use the method aleaboat
+     */
     public void aleaBattleship() {
         aleaBoat(7, "|B");
+    }
+    /**
+     * method aleaCruiser
+     * Create a ship of 5 boxes that use the method aleaboat
+     */
+    public void aleaCruiser() {
+        aleaBoat(5, "|C");
+    }
+    /**
+     * method aleaDestroyer
+     * Create a ship of 3 boxes that use the method aleaboat
+     */
+    public void aleaDestroyer() {
+        aleaBoat(3, "|D");
+    }
+    /**
+     * method aleaSubmarine
+     * Create a ship of 1 boxes that use the method aleaboat
+     */
+    public void aleaSubmarine() {
+        aleaBoat(1, "|S");
     }
 
     public boolean check() {
