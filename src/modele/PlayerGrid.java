@@ -28,6 +28,12 @@ public class PlayerGrid extends Grid {
         mat[lig][col] = "|#";
     }
 
+    /**
+     * Methode
+     * @param length
+     * @param boatString
+     * Place the boat randomly without being out of the grid
+     */
     public void aleaBoat(int length, String boatString) {
         String [][] save = this.mat; //voir java duplicate
         boolean outer = true;
@@ -52,6 +58,12 @@ public class PlayerGrid extends Grid {
     public void aleaBattleship() {
         aleaBoat(7, "|B");
     }
+
+    /**
+     * Methode check
+     * Verify the presence of the ship
+     * @return
+     */
 
     public boolean check() {
         for (int i = 0; i < 15; i++) {
