@@ -8,6 +8,10 @@ import java.util.Random;
  */
 public class PlayerGrid extends Grid {
 
+    /**
+     * Contructor
+     * Fill and place the ship
+     */
 
     public PlayerGrid() {
         super.fill();
