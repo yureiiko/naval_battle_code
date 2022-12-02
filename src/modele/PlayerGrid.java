@@ -12,30 +12,40 @@ public class PlayerGrid extends Grid {
     public PlayerGrid() {
         super.fill();
         aleaBattleship();
+        System.out.println("BattleShip");
         aleaCruiser();
+        System.out.println("Cruiser");
         aleaDestroyer();
+        System.out.println("Destroyer");
         aleaSubmarine();
+        System.out.println("Submarin");
     }
 
 
     public void aleaBoat(int length, String boatString) {
-        String [][] save = this.mat; //voir java duplicate
+        String [][] save = copyField(this.mat); //voir java duplicate
         boolean outer = true;
         while (outer) {
-            this.mat = save;
+            this.mat = copyField(save);
             Random ran = new Random();
             int iniCol = ran.nextInt(14);
             int iniLin = ran.nextInt(14);
             mat[iniLin][iniCol] = boatString;
-            for (int i = 1; i < length; i++) {
-                int col = iniCol + i;
-                if (col > 14 || col < 0 || this.mat[iniLin][col]!="| ") {
-                    break;
-                } else {
-                    mat[iniLin][col] = boatString;
+            if (length > 1) {
+                for (int i = 1; i < length; i++) {
+                    int col = iniCol + i;
+                    if (col > 14 || col < 0 || this.mat[iniLin][col]!="| ") {
+                        System.out.println("Out of field");
+                        outer = true;
+                        break;
+                    } else {
+                        mat[iniLin][col] = boatString;
+                        outer = false;
+                    }
                 }
+            } else {
+                outer = false;
             }
-            outer=false;
         }
     }
 
@@ -103,5 +113,15 @@ public class PlayerGrid extends Grid {
         }
         mat[l][c]="|O";
         return false;
+    }
+
+    private String [][] copyField(String [][] parField) {
+        String [][] out = new String[parField.length][parField[0].length];
+        for (int i=0 ; i<parField.length ; i++) {
+            for (int j=0 ; j<parField[i].length ; j++) {
+                out[i][j] = parField[i][j];
+            }
+        }
+        return out;
     }
 }
