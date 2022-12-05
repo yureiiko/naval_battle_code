@@ -19,11 +19,12 @@ public class Grid {
             }
         }
     }
-    @Override
+
     /**
      * Method toString
      * Method that permit to display the grid
      */
+    @Override
     public String toString() {
         String out ="\t|1 |2 |3 |4 |5 |6 |7 |8 |9 |10|11|12|13|14|15|\n";
         for (int i=0;i<15;i++) {

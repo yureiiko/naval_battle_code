@@ -35,6 +35,7 @@ public class GameMaster {
 
     /**
      * Method gamerPlay
+     * In this method, the human player choose a place to shoot
      */
     public void gamerPlay(){
         displayer.display(navalBattle.getPlayerGrid(0)+"\n\n");
@@ -58,6 +59,7 @@ public class GameMaster {
 
     /**
      * Method botPlay
+     * In this method, the bot player choose randomly a place to shoot
      */
     public void botPlay() {
         ini :
@@ -79,6 +81,7 @@ public class GameMaster {
     /**
      * Method letsPlay
      * @return String
+     * Bot and human player play one at a time
      */
     public String letsPlay() {
         String out = navalBattle.check();

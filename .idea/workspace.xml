@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="584b8abe-ced6-4948-bf55-9a966a1fcc29" name="Changes" comment="Minor modification">
+    <list default="true" id="584b8abe-ced6-4948-bf55-9a966a1fcc29" name="Changes" comment="Modification on PlayerGrid.aleaBoat and creationof PlayerGrid.copyField">
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_11_2022_17_59_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_25_11_2022_17_59__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/naval_battle_code/modele/PlayerGrid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/naval_battle_code/modele/PlayerGrid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/naval_battle_code/test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/naval_battle_code/test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GameMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameMaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/EnemyGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/EnemyGrid.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/Grid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/Grid.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/modele/PlayerGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/PlayerGrid.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +163,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669907965826</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Modification on PlayerGrid.aleaBoat and creationof PlayerGrid.copyField">
+      <created>1669986095135</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1669986095135</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -190,7 +203,8 @@
     <MESSAGE value="Method fire that write where the player hit" />
     <MESSAGE value="Class PlayerGrid" />
     <MESSAGE value="Minor modification" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor modification" />
+    <MESSAGE value="Modification on PlayerGrid.aleaBoat and creationof PlayerGrid.copyField" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modification on PlayerGrid.aleaBoat and creationof PlayerGrid.copyField" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
