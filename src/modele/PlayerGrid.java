@@ -27,7 +27,7 @@ public class PlayerGrid extends Grid {
      * Method aleaBoat
      * @param length int
      * @param boatString String
-     * Place on the grid a boat of size length. The boatis identified on the grid by the String boatString
+     * Place on the grid a boat of size length. The boat is identified on the grid by the String boatString
      */
     public void aleaBoat(int length, String boatString) {
         String [][] save = copyField(this.mat); //voir java duplicate
@@ -71,6 +71,7 @@ public class PlayerGrid extends Grid {
      * Create a ship of 5 boxes by using the method aleaboat
      */
     public void aleaCruiser() {
+
         aleaBoat(5, "|C");
     }
     /**
@@ -78,6 +79,7 @@ public class PlayerGrid extends Grid {
      * Create a ship of 3 boxes by using the method aleaboat
      */
     public void aleaDestroyer() {
+
         aleaBoat(3, "|D");
     }
     /**
@@ -85,7 +87,9 @@ public class PlayerGrid extends Grid {
      * Create a ship of 1 boxes by using the method aleaboat
      */
     public void aleaSubmarine() {
-        aleaBoat(1, "|S");
+        for(int i=0;i<4;i++) {
+            aleaBoat(1, "|S");
+        }
     }
 
     /**
@@ -103,6 +107,7 @@ public class PlayerGrid extends Grid {
 
         }
         return true;
+
     }
 
     /**
