@@ -38,7 +38,10 @@ public class GameMaster {
      * Method gamerPlay
      * In this method, the human player choose a place to shoot
      */
-    public void gamerPlay(){
+    public void gamerPlay(boolean cheat){
+        if (cheat) {
+            displayer.display("BOT GRID :\n"+navalBattle.getPlayerGrid(1).toString()+"\n");
+        }
         displayer.display(navalBattle.getPlayerGrid(0)+"\n\n");
         displayer.display(navalBattle.getEnemyGrid(1)+"\n");
         ini:
@@ -84,10 +87,10 @@ public class GameMaster {
      * @return String
      * Bot and human player play one at a time
      */
-    public String letsPlay() {
+    public String letsPlay(boolean cheat) {
         String out = navalBattle.check();
         while (out == null) {
-            this.gamerPlay();
+            this.gamerPlay(cheat);
             this.botPlay();
             out = navalBattle.check();
         }
@@ -126,7 +129,7 @@ public class GameMaster {
         GameMaster gm = new GameMaster();
         if (gm.start()) {
             long beg = System.currentTimeMillis();
-            gm.getDisplayer().display("The "+gm.letsPlay()+" win !!");
+            gm.getDisplayer().display("The "+gm.letsPlay(false)+" win !!");
             long end = System.currentTimeMillis();
             gm.getDisplayer().display("\nDuration : "+(end-beg)/6000+" minutes");
         }
