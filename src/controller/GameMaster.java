@@ -3,6 +3,7 @@ package controller;
 import modele.Game;
 import view.ConsoleDisplay;
 
+import java.sql.Time;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -99,7 +100,10 @@ public class GameMaster {
      */
     public static void main(String [] args) {
         GameMaster gm = new GameMaster();
+        long beg = System.currentTimeMillis();
         gm.getDisplayer().display("The "+gm.letsPlay()+" win !!!");
+        long end = System.currentTimeMillis();
+        gm.getDisplayer().display("\nDuration : "+(end-beg)/6000+" minutes");
     }
 
 }
