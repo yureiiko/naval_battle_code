@@ -95,7 +95,7 @@ public class PlayerGrid extends Grid {
     /**
      * Method check
      * @return boolean
-     * Check the grid and return true if there no more boat
+     * Check the grid and return true if there is no more boat
      */
     public boolean check() {
         for (int i = 0; i < 15; i++) {
