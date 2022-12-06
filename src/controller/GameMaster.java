@@ -95,15 +95,41 @@ public class GameMaster {
     }
 
     /**
+     * Method start
+     * @return boolean
+     * Display rules and return true if the player want to continue
+     */
+    public boolean start(){
+        String x;
+
+        Scanner sc =new Scanner(System.in);
+        System.out.println("--------------------Game : BattleShip--------------------\n");
+        System.out.println("You will have 2 grids, one that is yours the other one is the rival's grid\n");
+        System.out.println("You will have 4 ships\n1) 1 Battleship:B:7 boxes\t2)Cruiser:c:5 boxes\t3)Destroyer:d:3boxes\t4)Sub-marine:s:1 boxe\n");
+        System.out.println("Rules\na)Indicate the coordinate of the rival's boxe you want to shot\nb)If you hit a ship it will show 'hit' otherwise 'miss'\n");
+        System.out.println("In you other grid you will see where the rival hit\n");
+        System.out.println("The goal of the game is to hit every ships of the rival before he hit yours\n");
+        System.out.println("If you want to play enter 'y' otherwise enter 'n'\n" );
+        x=sc.next();
+        switch (x){
+            case "y": return true;
+            default  : return false;
+        }
+
+    }
+
+    /**
      * Method main
      * @param args String []
      */
     public static void main(String [] args) {
         GameMaster gm = new GameMaster();
-        long beg = System.currentTimeMillis();
-        gm.getDisplayer().display("The "+gm.letsPlay()+" win !!!");
-        long end = System.currentTimeMillis();
-        gm.getDisplayer().display("\nDuration : "+(end-beg)/6000+" minutes");
+        if (gm.start()) {
+            long beg = System.currentTimeMillis();
+            gm.getDisplayer().display("The "+gm.letsPlay()+" win !!!");
+            long end = System.currentTimeMillis();
+            gm.getDisplayer().display("\nDuration : "+(end-beg)/6000+" minutes");
+        }
     }
 
 }
