@@ -126,7 +126,7 @@ public class GameMaster {
         GameMaster gm = new GameMaster();
         if (gm.start()) {
             long beg = System.currentTimeMillis();
-            gm.getDisplayer().display("The "+gm.letsPlay()+" win !!!");
+            gm.getDisplayer().display("The "+gm.letsPlay()+" win !!");
             long end = System.currentTimeMillis();
             gm.getDisplayer().display("\nDuration : "+(end-beg)/6000+" minutes");
         }
