@@ -14,9 +14,13 @@ public class PlayerGrid extends Grid {
     public PlayerGrid() {
         super.fill();
         aleaBattleship();
+        System.out.println("BattleShip");
         aleaCruiser();
+        System.out.println("Cruiser");
         aleaDestroyer();
+        System.out.println("Destroyer");
         aleaSubmarine();
+        System.out.println("Submarin");
     }
 
     /**
@@ -34,15 +38,18 @@ public class PlayerGrid extends Grid {
             int iniCol = ran.nextInt(14);
             int iniLin = ran.nextInt(14);
             mat[iniLin][iniCol] = boatString;
+            int [] coor = {iniLin, iniCol};
+            int ranCoor = ran.nextInt(2);
             if (length > 1) {
                 for (int i = 1; i < length; i++) {
-                    int col = iniCol + i;
-                    if (col > 14 || col < 0 || this.mat[iniLin][col]!="| ") {
+                    coor[ranCoor] = coor[ranCoor]+1;
+                    if (coor[0] > 14 || coor[0] < 0 || coor[1] > 14 || coor[1] < 0 || this.mat[coor[0]][coor[1]]!="| ") {
                         System.out.println("Out of field");
+                        System.out.println(coor[0]+";"+coor[1]);
                         outer = true;
                         break;
                     } else {
-                        mat[iniLin][col] = boatString;
+                        mat[coor[0]][coor[1]] = boatString;
                         outer = false;
                     }
                 }
@@ -54,7 +61,7 @@ public class PlayerGrid extends Grid {
 
     /**
      * method aleaBattleship
-     * Create a ship of 7 boxes by using the method aleaboat
+     * Create a ship of 7 boxes by using the method aleaBoat
      */
     public void aleaBattleship() {
         aleaBoat(7, "|B");
