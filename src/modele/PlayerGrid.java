@@ -106,7 +106,7 @@ public class PlayerGrid extends Grid {
      * Return true if there's a boat at the input coordinates
      */
     public boolean fire(int l, int c) {
-        if ((mat[l][c] != "| ") && (mat[l][c] != "|X") && (mat[l][c] != "|0")) {
+        if ((mat[l][c] == "|B") || (mat[l][c] != "|C") || (mat[l][c] != "|D") || (mat[l][c] != "|S")) {
             mat[l][c]="|X";
             return true;
         }
