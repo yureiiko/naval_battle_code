@@ -118,7 +118,7 @@ public class PlayerGrid extends Grid implements Serializable {
      * Return true if there's a boat at the input coordinates
      */
     public boolean fire(int l, int c) {
-        if ((mat[l][c] == "|B") || (mat[l][c] != "|C") || (mat[l][c] != "|D") || (mat[l][c] != "|S")) {
+        if ((mat[l][c] == "|B") || (mat[l][c] == "|C") || (mat[l][c] == "|D") || (mat[l][c] == "|S")) {
             mat[l][c]="|X";
             return true;
         }

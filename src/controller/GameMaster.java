@@ -23,11 +23,7 @@ public class GameMaster {
      * Constructor
      */
     public GameMaster() throws ClassNotFoundException, IOException {
-        try {
-            navalBattle = new Game().load("save/gamesave");
-        } catch (EOFException e) {
-            navalBattle = new Game();
-        }
+        navalBattle = new Game();
         scan = new Scanner(System.in);
         displayer = new ConsoleDisplay();
     }
@@ -63,7 +59,6 @@ public class GameMaster {
             }
         } catch (IndexOutOfBoundsException e) {
             displayer.display("\nYou quit the game\n");
-            navalBattle.save("save/gamesave");
             return true;
         }
         return false;
@@ -99,6 +94,7 @@ public class GameMaster {
         String out = navalBattle.check();
         while (out == null) {
             if (gamerPlay(cheat)) {
+                //navalBattle.save("save/gamesave");
                 return "quit";
             }
             this.botPlay();
