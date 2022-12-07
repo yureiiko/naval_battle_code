@@ -1,12 +1,13 @@
 package modele;
 
+import java.io.*;
 import java.util.Scanner;
 
 /**
  * Class Game
  * @author FLEURY CALAIS Camille
  */
-public class Game {
+public class Game implements Serializable {
 
     PlayerGrid [] gridPlayer;
     EnemyGrid [] gridEnemy;
@@ -71,4 +72,31 @@ public class Game {
         return false;
     }
 
+    /**
+     * Method save
+     * @param filename String
+     * @throws IOException
+     * Save the object in the file with the given name
+     */
+    public void save(String filename) throws IOException {
+        FileOutputStream fos = new FileOutputStream(filename);
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        oos.writeObject(this); oos.flush(); oos.close();
+    }
+
+    /**
+     * Method load
+     * @param filename String
+     * @return Game
+     * @throws IOException
+     * @throws ClassNotFoundException
+     * Load the object saved in the file with the given name
+     */
+    public Game load(String filename) throws IOException, ClassNotFoundException {
+        FileInputStream fis = new FileInputStream(filename);
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        Game tmpGame = (Game) ois.readObject();
+        ois.close();
+        return tmpGame;
+    }
 }
