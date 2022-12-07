@@ -87,9 +87,9 @@ public class PlayerGrid extends Grid {
      * Create a ship of 1 boxes by using the method aleaboat
      */
     public void aleaSubmarine() {
-
+        for (int i=0;i<4;i++){
         aleaBoat(1, "|S");
-    }
+    }}
 
     /**
      * Method check
