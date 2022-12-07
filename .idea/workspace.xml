@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="584b8abe-ced6-4948-bf55-9a966a1fcc29" name="Changes" comment="add method aleaboats">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/naval_battle_code/controller/GameMaster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/naval_battle_code/controller/GameMaster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/naval_battle_code/modele/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/naval_battle_code/modele/Game.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/naval_battle_code/modele/PlayerGrid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/naval_battle_code/modele/PlayerGrid.class" afterDir="false" />
-    </list>
+    <list default="true" id="584b8abe-ced6-4948-bf55-9a966a1fcc29" name="Changes" comment="java doc ships" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -179,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670341518771</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="java doc ships">
+      <created>1670420525985</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1670420525985</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -214,7 +216,8 @@
     <MESSAGE value="Modification on PlayerGrid.aleaBoat and creationof PlayerGrid.copyField" />
     <MESSAGE value="Doc update." />
     <MESSAGE value="Minor Modification" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor Modification" />
+    <MESSAGE value="java doc ships" />
+    <option name="LAST_COMMIT_MESSAGE" value="java doc ships" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
