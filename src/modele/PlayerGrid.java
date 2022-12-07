@@ -27,7 +27,7 @@ public class PlayerGrid extends Grid {
      * Method aleaBoat
      * @param length int
      * @param boatString String
-     * Place on the grid a boat of size length. The boatis identified on the grid by the String boatString
+     * Place on the grid a boat of size length. The boat is identified on the grid by the String boatString
      */
     public void aleaBoat(int length, String boatString) {
         String [][] save = copyField(this.mat); //voir java duplicate
