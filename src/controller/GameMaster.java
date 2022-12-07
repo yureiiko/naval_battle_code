@@ -3,6 +3,8 @@ package controller;
 import modele.Game;
 import view.ConsoleDisplay;
 
+import java.io.EOFException;
+import java.io.IOException;
 import java.sql.Time;
 import java.util.Random;
 import java.util.Scanner;
@@ -20,8 +22,12 @@ public class GameMaster {
     /**
      * Constructor
      */
-    public GameMaster() {
-        navalBattle = new Game();
+    public GameMaster() throws ClassNotFoundException, IOException {
+        try {
+            navalBattle = new Game().load("save/gamesave");
+        } catch (EOFException e) {
+            navalBattle = new Game();
+        }
         scan = new Scanner(System.in);
         displayer = new ConsoleDisplay();
     }
@@ -38,27 +44,29 @@ public class GameMaster {
      * Method gamerPlay
      * In this method, the human player choose a place to shoot
      */
-    public void gamerPlay(boolean cheat){
+    public boolean gamerPlay(boolean cheat) throws IOException {
         if (cheat) {
             displayer.display("BOT GRID :\n"+navalBattle.getPlayerGrid(1).toString()+"\n");
         }
         displayer.display(navalBattle.getPlayerGrid(0)+"\n\n");
         displayer.display(navalBattle.getEnemyGrid(1)+"\n");
-        ini:
-            try {
-                displayer.display("\nEnter the target column : ");
-                int col = scan.nextInt();
-                displayer.display("\nEnter the target line : ");
-                int line = scan.nextInt();
-                if (navalBattle.fire(1, col-1, line-1)) {
-                    displayer.display("HIT :D !\n");
-                } else {
-                    displayer.display("miss :( \n");
-                }
-            } catch (IndexOutOfBoundsException e) {
-                displayer.display("\nEnter a number between 1 and 15\n");
-                break ini;
+        displayer.display("Enter a negative or higher than 15 value to quit\n");
+        try {
+            displayer.display("\nEnter the target column : ");
+            int col = scan.nextInt();
+            displayer.display("\nEnter the target line : ");
+            int line = scan.nextInt();
+            if (navalBattle.fire(1, col-1, line-1)) {
+                displayer.display("HIT :D !\n");
+            } else {
+                displayer.display("miss :( \n");
             }
+        } catch (IndexOutOfBoundsException e) {
+            displayer.display("\nYou quit the game\n");
+            navalBattle.save("save/gamesave");
+            return true;
+        }
+        return false;
     }
 
     /**
@@ -87,10 +95,12 @@ public class GameMaster {
      * @return String
      * Bot and human player play one at a time
      */
-    public String letsPlay(boolean cheat) {
+    public String letsPlay(boolean cheat) throws IOException {
         String out = navalBattle.check();
         while (out == null) {
-            this.gamerPlay(cheat);
+            if (gamerPlay(cheat)) {
+                return "quit";
+            }
             this.botPlay();
             out = navalBattle.check();
         }
@@ -139,11 +149,15 @@ public class GameMaster {
      * Method main
      * @param args String []
      */
-    public static void main(String [] args) {
+    public static void main(String [] args) throws IOException, ClassNotFoundException {
         GameMaster gm = new GameMaster();
         if (gm.start()) {
             long beg = System.currentTimeMillis();
-            gm.getDisplayer().display("The "+gm.letsPlay(gm.askCheat())+" win !!");
+            String out = gm.letsPlay(gm.askCheat());
+            switch (out) {
+                case "quit" : return;
+                default: gm.getDisplayer().display("The "+out+" win !!");
+            }
             long end = System.currentTimeMillis();
             gm.getDisplayer().display("\nDuration : "+(end-beg)/6000+" minutes");
         }

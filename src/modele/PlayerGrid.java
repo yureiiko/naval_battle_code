@@ -1,12 +1,13 @@
 package modele;
 
+import java.io.Serializable;
 import java.util.Random;
 
 /**
  * Class PlayerGrid
  * @author Kularajasingam Kosakan
  */
-public class PlayerGrid extends Grid {
+public class PlayerGrid extends Grid implements Serializable {
 
     /**
      * Constructor

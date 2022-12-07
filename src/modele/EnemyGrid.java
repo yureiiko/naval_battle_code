@@ -1,9 +1,11 @@
 package modele;
 
+import java.io.Serializable;
+
 /**
  * Class EnemyGrid
  */
-public class EnemyGrid extends Grid{
+public class EnemyGrid extends Grid implements Serializable {
 
     /**
      * Constructor
