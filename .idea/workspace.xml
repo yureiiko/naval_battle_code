@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="584b8abe-ced6-4948-bf55-9a966a1fcc29" name="Changes" comment="add method aleaboats">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/naval_battle_code/controller/GameMaster.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/naval_battle_code/controller/GameMaster.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/naval_battle_code/modele/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/naval_battle_code/modele/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/naval_battle_code/modele/PlayerGrid.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/naval_battle_code/modele/PlayerGrid.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/modele/PlayerGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/PlayerGrid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,12 +171,12 @@
       <option name="project" value="LOCAL" />
       <updated>1670261292533</updated>
     </task>
-    <task id="LOCAL-00016" summary="Minor Modification">
-      <created>1670341518771</created>
+    <task id="LOCAL-00016" summary="add method aleaboats">
+      <created>1670343542826</created>
       <option name="number" value="00016" />
       <option name="presentableId" value="LOCAL-00016" />
       <option name="project" value="LOCAL" />
-      <updated>1670341518771</updated>
+      <updated>1670343542826</updated>
     </task>
     <option name="localTasksCounter" value="17" />
     <servers />
@@ -213,8 +212,8 @@
     <MESSAGE value="Minor modification" />
     <MESSAGE value="Modification on PlayerGrid.aleaBoat and creationof PlayerGrid.copyField" />
     <MESSAGE value="Doc update." />
-    <MESSAGE value="Minor Modification" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor Modification" />
+    <MESSAGE value="add method aleaboats" />
+    <option name="LAST_COMMIT_MESSAGE" value="add method aleaboats" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
