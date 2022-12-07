@@ -28,7 +28,7 @@ public class PlayerGrid extends Grid implements Serializable {
      * Method aleaBoat
      * @param length int
      * @param boatString String
-     * Place on the grid a boat of size length. The boat is identified on the grid by the String boatString
+     * Place on the grid a boat of size length. The boatis identified on the grid by the String boatString
      */
     public void aleaBoat(int length, String boatString) {
         String [][] save = copyField(this.mat); //voir java duplicate
@@ -44,7 +44,7 @@ public class PlayerGrid extends Grid implements Serializable {
             if (length > 1) {
                 for (int i = 1; i < length; i++) {
                     coor[ranCoor] = coor[ranCoor]+1;
-                    if (coor[0] > 14 || coor[0] < 0 || coor[1] > 14 || coor[1] < 0 || this.mat[coor[0]][coor[1]].compareTo("|B")==0 || this.mat[coor[0]][coor[1]].compareTo("|C")==0 || this.mat[coor[0]][coor[1]].compareTo("|D")==0 || this.mat[coor[0]][coor[1]].compareTo("|S")==0) {
+                    if (coor[0] > 14 || coor[0] < 0 || coor[1] > 14 || coor[1] < 0 || this.mat[coor[0]][coor[1]]!="| ") {
                         System.out.println("Out of field");
                         System.out.println(coor[0]+";"+coor[1]);
                         outer = true;
@@ -62,34 +62,35 @@ public class PlayerGrid extends Grid implements Serializable {
 
     /**
      * method aleaBattleship
-     * Create 1 battleship of 7 boxes by using the method aleaBoat
+     * Create a ship of 7 boxes by using the method aleaBoat
      */
     public void aleaBattleship() {
-        aleaBoat(7, "|B");
+        aleaBoat(7, "\u001B[36m|B\u001b[m");
     }
     /**
      * method aleaCruiser
-     * Create 2 cruisers of 5 boxes by using the method aleaboat
+     * Create a ship of 5 boxes by using the method aleaboat
      */
     public void aleaCruiser() {
         for (int i=0;i<2;i++){
-        aleaBoat(5, "|C");
+
+        aleaBoat(5, "\u001B[34m|C\u001b[m");
     }}
     /**
      * method aleaDestroyer
-     * Create 3 destroyers of 3 boxes by using the method aleaboat
+     * Create a ship of 3 boxes by using the method aleaboat
      */
     public void aleaDestroyer() {
         for (int i=0;i<3;i++){
-        aleaBoat(3, "|D");
+        aleaBoat(3, "\u001B[35m|D\u001b[m");
     }}
     /**
      * method aleaSubmarine
-     * Create 4 submarines ship of 1 boxe by using the method aleaboat
+     * Create a ship of 1 boxes by using the method aleaboat
      */
     public void aleaSubmarine() {
         for (int i=0;i<4;i++){
-        aleaBoat(1, "|S");
+        aleaBoat(1, "\u001B[33m|S\u001b[m");
     }}
 
     /**
@@ -116,8 +117,7 @@ public class PlayerGrid extends Grid implements Serializable {
      * @return boolean
      * Return true if there's a boat at the input coordinates
      */
-    public boolean
-    fire(int l, int c) {
+    public boolean fire(int l, int c) {
         if ((mat[l][c] == "|B") || (mat[l][c] != "|C") || (mat[l][c] != "|D") || (mat[l][c] != "|S")) {
             mat[l][c]="|X";
             return true;
