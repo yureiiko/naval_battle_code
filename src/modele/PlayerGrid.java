@@ -43,7 +43,7 @@ public class PlayerGrid extends Grid {
             if (length > 1) {
                 for (int i = 1; i < length; i++) {
                     coor[ranCoor] = coor[ranCoor]+1;
-                    if (coor[0] > 14 || coor[0] < 0 || coor[1] > 14 || coor[1] < 0 || this.mat[coor[0]][coor[1]]!="| ") {
+                    if (coor[0] > 14 || coor[0] < 0 || coor[1] > 14 || coor[1] < 0 || this.mat[coor[0]][coor[1]].compareTo("|B")==0 || this.mat[coor[0]][coor[1]].compareTo("|C")==0 || this.mat[coor[0]][coor[1]].compareTo("|D")==0 || this.mat[coor[0]][coor[1]].compareTo("|S")==0) {
                         System.out.println("Out of field");
                         System.out.println(coor[0]+";"+coor[1]);
                         outer = true;
