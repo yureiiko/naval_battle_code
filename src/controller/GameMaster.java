@@ -122,6 +122,20 @@ public class GameMaster {
     }
 
     /**
+     * Method askCheat
+     * @return boolean
+     * Ask to the player if he want to play in cheat mode
+     */
+    public boolean askCheat() {
+        System.out.println("Do you want to use the cheat mode where you can see the enemy battlefield (y: yes / n : no) :");
+        String awnser = this.scan.nextLine();
+        switch (awnser) {
+            case "y" : return true;
+            default: return false;
+        }
+    }
+
+    /**
      * Method main
      * @param args String []
      */
@@ -129,7 +143,7 @@ public class GameMaster {
         GameMaster gm = new GameMaster();
         if (gm.start()) {
             long beg = System.currentTimeMillis();
-            gm.getDisplayer().display("The "+gm.letsPlay(false)+" win !!");
+            gm.getDisplayer().display("The "+gm.letsPlay(gm.askCheat())+" win !!");
             long end = System.currentTimeMillis();
             gm.getDisplayer().display("\nDuration : "+(end-beg)/6000+" minutes");
         }
