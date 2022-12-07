@@ -124,7 +124,7 @@ public class GameMaster {
     /**
      * Method askCheat
      * @return boolean
-     * Ask to the player if he want to play in cheat mode
+     * Ask to the player if he want to play the cheat mode
      */
     public boolean askCheat() {
         System.out.println("Do you want to use the cheat mode where you can see the enemy battlefield (y: yes / n : no) :");
