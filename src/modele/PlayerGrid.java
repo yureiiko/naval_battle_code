@@ -61,14 +61,14 @@ public class PlayerGrid extends Grid {
 
     /**
      * method aleaBattleship
-     * Create a ship of 7 boxes by using the method aleaBoat
+     * Create 1 battleship of 7 boxes by using the method aleaBoat
      */
     public void aleaBattleship() {
         aleaBoat(7, "|B");
     }
     /**
      * method aleaCruiser
-     * Create a ship of 5 boxes by using the method aleaboat
+     * Create 2 cruisers of 5 boxes by using the method aleaboat
      */
     public void aleaCruiser() {
         for (int i=0;i<2;i++){
@@ -76,7 +76,7 @@ public class PlayerGrid extends Grid {
     }}
     /**
      * method aleaDestroyer
-     * Create a ship of 3 boxes by using the method aleaboat
+     * Create 3 destroyers of 3 boxes by using the method aleaboat
      */
     public void aleaDestroyer() {
         for (int i=0;i<3;i++){
@@ -84,7 +84,7 @@ public class PlayerGrid extends Grid {
     }}
     /**
      * method aleaSubmarine
-     * Create a ship of 1 boxes by using the method aleaboat
+     * Create 4 submarines ship of 1 boxe by using the method aleaboat
      */
     public void aleaSubmarine() {
         for (int i=0;i<4;i++){
@@ -115,7 +115,8 @@ public class PlayerGrid extends Grid {
      * @return boolean
      * Return true if there's a boat at the input coordinates
      */
-    public boolean fire(int l, int c) {
+    public boolean
+    fire(int l, int c) {
         if ((mat[l][c] == "|B") || (mat[l][c] != "|C") || (mat[l][c] != "|D") || (mat[l][c] != "|S")) {
             mat[l][c]="|X";
             return true;
