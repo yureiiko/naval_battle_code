@@ -110,6 +110,48 @@ public class PlayerGrid extends Grid implements Serializable {
         return true;
     }
 
+
+    public boolean fireb(int l, int c) {
+        int n = (int)(Math.random() * 2);
+        for (int i=0;i<9;i++){
+        if (n==0){
+
+                if ((mat[l+i][c] == "|B") || (mat[l+i][c] == "|C") || (mat[l+i][c] == "|D") || (mat[l+i][c] == "|S") ) {
+                    mat[l+i][c]="|X";
+                }
+                else {
+            mat[l+i][c]="|O";}
+            }
+        if (n==1){
+
+                if ((mat[l][c+i] == "|B") || (mat[l][c+i] == "|C") || (mat[l][c+i] == "|D") || (mat[l][c+i] == "|S") ) {
+                    mat[l][c+i]="|X";
+                }
+                else {
+                mat[l][c+i]="|O";
+                    }
+            }
+        }return true;
+    }
+    public boolean firec(int l, int c) {
+        if ((mat[l][c] == "|B") || (mat[l][c] == "|C") || (mat[l][c] == "|D") || (mat[l][c] == "|S")) {
+            int n = (int)(Math.random() * 2);
+            if (n==0){
+                for (int i=0;i<4;i++){
+                    mat[l][c+i]="|X";}}
+            else if (n==1){
+                for (int j=0;j<4;j++){
+                    mat[l+j][c]="|X";}}
+            return true;}
+        int n = (int)(Math.random() * 2);
+        if (n==0){
+            for (int i=0;i<4;i++){
+                mat[l+i][c]="|O";}}
+        else if (n==1){
+            for (int j=0;j<4;j++){
+                mat[l][c+j]="|O";}}
+        return false;}
+
     /**
      * Method fire
      * @param c int

@@ -71,6 +71,22 @@ public class Game implements Serializable {
         gridEnemy[gridInd].update(targLine,targCol,"|O");//update with 0 if no ship hit
         return false;
     }
+    public boolean firebattelship(int gridInd, int targCol, int targLine) {//gridInd permet d'appeler l'indice de l'element du tableau
+        if (gridPlayer[gridInd].fireb(targLine,targCol)) {
+            gridEnemy[gridInd].update(targLine,targCol,"|X");//call the method update and add X if ship hit
+            return true;
+        }
+        gridEnemy[gridInd].update(targLine,targCol,"|O");//update with 0 if no ship hit
+        return false;
+    }
+    public boolean firecruiser(int gridInd, int targCol, int targLine) {//gridInd permet d'appeler l'indice de l'element du tableau
+        if (gridPlayer[gridInd].firec(targLine,targCol)) {
+            gridEnemy[gridInd].update(targLine,targCol,"|X");//call the method update and add X if ship hit
+            return true;
+        }
+        gridEnemy[gridInd].update(targLine,targCol,"|O");//update with 0 if no ship hit
+        return false;
+    }
 
     /**
      * Method save
