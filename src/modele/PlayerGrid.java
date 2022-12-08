@@ -38,11 +38,11 @@ public class PlayerGrid extends Grid implements Serializable {
             Random ran = new Random();
             int iniCol = ran.nextInt(14);
             int iniLin = ran.nextInt(14);
-            mat[iniLin][iniCol] = boatString;
+            //mat[iniLin][iniCol] = boatString;
             int [] coor = {iniLin, iniCol};
             int ranCoor = ran.nextInt(2);
-            if (length > 1) {
-                for (int i = 1; i < length; i++) {
+            if (length > 0) {
+                for (int i = 0; i < length; i++) {
                     coor[ranCoor] = coor[ranCoor]+1;
                     if (coor[0] > 14 || coor[0] < 0 || coor[1] > 14 || coor[1] < 0 || this.mat[coor[0]][coor[1]]!="| ") {
                         System.out.println("Out of field");
@@ -118,9 +118,12 @@ public class PlayerGrid extends Grid implements Serializable {
      * Return true if there's a boat at the input coordinates
      */
     public boolean fire(int l, int c) {
-        if ((mat[l][c] == "|B") || (mat[l][c] == "|C") || (mat[l][c] == "|D") || (mat[l][c] == "|S")) {
+        if ((mat[l][c] == "\u001B[36m|B\u001b[m") || (mat[l][c] == "\u001B[34m|C\u001b[m") || (mat[l][c] == "\u001B[35m|D\u001b[m") || (mat[l][c] == "\u001B[33m|S\u001b[m")) {
             mat[l][c]="|X";
             return true;
+        }
+        if (mat[l][c] == "|X") {
+            return false;
         }
         mat[l][c]="|O";
         return false;
