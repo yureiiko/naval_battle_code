@@ -69,20 +69,15 @@ public class GameMaster {
      * In this method, the bot player choose randomly a place to shoot
      */
     public void botPlay() {
-        ini :
-            try {
-                displayer.display("The bot fire at : ");
-                int line = new Random().nextInt(14);
-                int col = new Random().nextInt(14);
-                displayer.display((line+1)+";"+(col+1)+"\n");
-                if (navalBattle.fire(0, col-1, line-1)) {
-                    displayer.display("and HIT\n");
-                } else {
-                    displayer.display("and miss\n");
-                }
-            } catch (ArrayIndexOutOfBoundsException e) {
-                break ini;
-            }
+        displayer.display("The bot fire at : ");
+        int line = new Random().nextInt(14);
+        int col = new Random().nextInt(14);
+        displayer.display((line+1)+";"+(col+1)+"\n");
+        if (navalBattle.fire(0, col-1, line-1)) {
+            displayer.display("and HIT\n");
+        } else {
+            displayer.display("and miss\n");
+        }
     }
 
     /**
