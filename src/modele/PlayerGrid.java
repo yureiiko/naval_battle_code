@@ -1,6 +1,7 @@
 package modele;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Random;
 
 /**
@@ -45,8 +46,6 @@ public class PlayerGrid extends Grid implements Serializable {
                 for (int i = 0; i < length; i++) {
                     coor[ranCoor] = coor[ranCoor]+1;
                     if (coor[0] > 14 || coor[0] < 0 || coor[1] > 14 || coor[1] < 0 || this.mat[coor[0]][coor[1]]!="| ") {
-                        System.out.println("Out of field");
-                        System.out.println(coor[0]+";"+coor[1]);
                         outer = true;
                         break;
                     } else {
@@ -110,47 +109,33 @@ public class PlayerGrid extends Grid implements Serializable {
         return true;
     }
 
-
-    public boolean fireb(int l, int c) {
-        int n = (int)(Math.random() * 2);
-        for (int i=0;i<9;i++){
-        if (n==0){
-
-                if ((mat[l+i][c] == "|B") || (mat[l+i][c] == "|C") || (mat[l+i][c] == "|D") || (mat[l+i][c] == "|S") ) {
-                    mat[l+i][c]="|X";
+    /**
+     * Method validBoat : return all boat still in the game
+     * @return ArrayList
+     */
+    public ArrayList<String> validBoat() {
+        ArrayList<String> out = new ArrayList<>();
+        for (int i = 0; i < 15; i++) {
+            for (int j = 0; j < 15; j++) {
+                switch (mat[i][j]) {
+                    case "\u001B[36m|B\u001b[m":
+                        if (!out.contains("B"))
+                            out.add("B");
+                    case "\u001B[34m|C\u001b[m":
+                        if (!out.contains("C"))
+                            out.add("C");
+                    case "\u001B[35m|D\u001b[m":
+                        if (!out.contains("D"))
+                            out.add("D");
+                    case "\u001B[33m|S\u001b[m":
+                        if (!out.contains("S"))
+                            out.add("S");
+                    default: continue;
                 }
-                else {
-            mat[l+i][c]="|O";}
             }
-        if (n==1){
-
-                if ((mat[l][c+i] == "|B") || (mat[l][c+i] == "|C") || (mat[l][c+i] == "|D") || (mat[l][c+i] == "|S") ) {
-                    mat[l][c+i]="|X";
-                }
-                else {
-                mat[l][c+i]="|O";
-                    }
-            }
-        }return true;
+        }
+        return out;
     }
-    public boolean firec(int l, int c) {
-        if ((mat[l][c] == "|B") || (mat[l][c] == "|C") || (mat[l][c] == "|D") || (mat[l][c] == "|S")) {
-            int n = (int)(Math.random() * 2);
-            if (n==0){
-                for (int i=0;i<4;i++){
-                    mat[l][c+i]="|X";}}
-            else if (n==1){
-                for (int j=0;j<4;j++){
-                    mat[l+j][c]="|X";}}
-            return true;}
-        int n = (int)(Math.random() * 2);
-        if (n==0){
-            for (int i=0;i<4;i++){
-                mat[l+i][c]="|O";}}
-        else if (n==1){
-            for (int j=0;j<4;j++){
-                mat[l][c+j]="|O";}}
-        return false;}
 
     /**
      * Method fire
@@ -160,15 +145,19 @@ public class PlayerGrid extends Grid implements Serializable {
      * Return true if there's a boat at the input coordinates
      */
     public boolean fire(int l, int c) {
-        if ((mat[l][c] == "\u001B[36m|B\u001b[m") || (mat[l][c] == "\u001B[34m|C\u001b[m") || (mat[l][c] == "\u001B[35m|D\u001b[m") || (mat[l][c] == "\u001B[33m|S\u001b[m")) {
-            mat[l][c]="|X";
-            return true;
-        }
-        if (mat[l][c] == "|X") {
+        try {
+            if ((mat[l][c] == "\u001B[36m|B\u001b[m") || (mat[l][c] == "\u001B[34m|C\u001b[m") || (mat[l][c] == "\u001B[35m|D\u001b[m") || (mat[l][c] == "\u001B[33m|S\u001b[m")) {
+                mat[l][c]="|X";
+                return true;
+            }
+            if (mat[l][c] == "|X") {
+                return false;
+            }
+            mat[l][c]="|O";
+            return false;
+        } catch (ArrayIndexOutOfBoundsException e) {
             return false;
         }
-        mat[l][c]="|O";
-        return false;
     }
 
     /**

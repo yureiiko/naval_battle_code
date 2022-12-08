@@ -64,6 +64,7 @@ public class Game implements Serializable {
      * @return boolean
      */
     public boolean fire(int gridInd, int targCol, int targLine) {//gridInd permet d'appeler l'indice de l'element du tableau
+        System.out.println("\nFire");
         if (gridPlayer[gridInd].fire(targLine,targCol)) {
             gridEnemy[gridInd].update(targLine,targCol,"|X");//call the method update and add X if ship hit
             return true;
@@ -71,21 +72,23 @@ public class Game implements Serializable {
         gridEnemy[gridInd].update(targLine,targCol,"|O");//update with 0 if no ship hit
         return false;
     }
+
     public boolean firebattelship(int gridInd, int targCol, int targLine) {//gridInd permet d'appeler l'indice de l'element du tableau
-        if (gridPlayer[gridInd].fireb(targLine,targCol)) {
-            gridEnemy[gridInd].update(targLine,targCol,"|X");//call the method update and add X if ship hit
-            return true;
+        boolean out = this.fire(gridInd, targCol, targLine);
+        for (int i=1 ; i<5 ; i++) {
+            out = out||this.fire(gridInd, targCol-i, targLine);
+            out = out||this.fire(gridInd, targCol+i, targLine);
         }
-        gridEnemy[gridInd].update(targLine,targCol,"|O");//update with 0 if no ship hit
-        return false;
+        return out;
     }
+
     public boolean firecruiser(int gridInd, int targCol, int targLine) {//gridInd permet d'appeler l'indice de l'element du tableau
-        if (gridPlayer[gridInd].firec(targLine,targCol)) {
-            gridEnemy[gridInd].update(targLine,targCol,"|X");//call the method update and add X if ship hit
-            return true;
+        boolean out = this.fire(gridInd, targCol, targLine);
+        for (int i=1 ; i<3 ; i++) {
+            out = out||this.fire(gridInd, targCol-i, targLine);
+            out = out||this.fire(gridInd, targCol+i, targLine);
         }
-        gridEnemy[gridInd].update(targLine,targCol,"|O");//update with 0 if no ship hit
-        return false;
+        return out;
     }
 
     /**

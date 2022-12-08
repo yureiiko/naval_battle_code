@@ -46,64 +46,37 @@ public class GameMaster {
         }
         displayer.display(navalBattle.getPlayerGrid(0)+"\n\n");
         displayer.display(navalBattle.getEnemyGrid(1)+"\n");
-        displayer.display("Enter a negative or higher than 15 value to quit\n");
-        try {
-            displayer.display("\nEnter the NAME : ");
-            String boat = scan.nextLine();
-            String B="B";
-            String C="C";
-            String D="D";
-            String S="S";
-
-            if (boat.equals(B)){
-                displayer.display("\nYou chose to fire with Battleship\n");
-                displayer.display("\nEnter the target column : ");
-                int col = scan.nextInt();
-                displayer.display("\nEnter the target line : ");
-                int line = scan.nextInt();
-                if (navalBattle.firebattelship(1, col-1, line-1)) {
-                    displayer.display("HIT :D !\n");
-                } else {
-                    displayer.display("miss :( \n");
+        displayer.display("Enter a non boat ID, negative or higher than 15 value to quit\n");
+        displayer.display("\nEnter the NAME "+navalBattle.getPlayerGrid(0).validBoat()+" : ");
+        String boat = scan.next();
+        if (navalBattle.getPlayerGrid(0).validBoat().contains(boat)) {
+            displayer.display("Enter the target column : ");
+            int targCol = scan.nextInt();
+            displayer.display("Enter the target line : ");
+            int targLine = scan.nextInt();
+            if (targCol > 0 && targCol < 15 && targLine > 0 && targLine < 15) {
+                System.out.println("\nGood coordinates\n");
+                boolean res;
+                switch (boat) {
+                    case "B":
+                        res = navalBattle.firebattelship(1, targCol - 1, targLine - 1);
+                    case "C":
+                        res = navalBattle.firecruiser(1, targCol - 1, targLine - 1);
+                    default:
+                        res = navalBattle.fire(1, targCol - 1, targLine - 1);
                 }
-            } else if (boat.equals(C)) {
-                displayer.display("\nYou chose to fire with Cruiser\n");
-                displayer.display("\nEnter the target column : ");
-                int col = scan.nextInt();
-                displayer.display("\nEnter the target line : ");
-                int line = scan.nextInt();
-                if (navalBattle.firecruiser(1, col-1, line-1)) {
-                    displayer.display("HIT :D !\n");
+                if (res) {
+                    displayer.display("\nHIT :D ! \n");
                 } else {
-                    displayer.display("miss :( \n");
+                    displayer.display("\nMiss :( \n");
                 }
-            }else if (boat.equals(D)) {
-                displayer.display("\nYou chose to fire with Destroyer\n");
-                displayer.display("\nEnter the target column : ");
-                int col = scan.nextInt();
-                displayer.display("\nEnter the target line : ");
-                int line = scan.nextInt();
-                if (navalBattle.fire(1, col-1, line-1)) {
-                    displayer.display("HIT :D !\n");
-                } else {
-                    displayer.display("miss :( \n");
-                }
-            }else if (boat.equals(S)) {
-                displayer.display("\nYou chose to fire with Submarine\n");
-                displayer.display("\nEnter the target column : ");
-                int col = scan.nextInt();
-                displayer.display("\nEnter the target line : ");
-                int line = scan.nextInt();
-                if (navalBattle.fire(1, col-1, line-1)) {
-                    displayer.display("HIT :D !\n");
-                } else {
-                    displayer.display("miss :( \n");
-                }
+            } else {
+                System.out.println("\nNot a coor\n");
+                return exitGame();
             }
-
-        } catch (IndexOutOfBoundsException e) {
-            displayer.display("\nYou quit the game\n");
-            return true;
+        } else {
+            System.out.println("\nNot a boat\n");
+            return exitGame();
         }
         return false;
     }
@@ -112,54 +85,49 @@ public class GameMaster {
      * Method botPlay
      * In this method, the bot player choose randomly a place to shoot
      */
-    public void botPlay() {
-        ini :
-            try {
-
-                int n = (int)(Math.random() * 4);
-                if (n==0){
-                    displayer.display("The bot chose to fire with Battleship at : ");
-                    int line = new Random().nextInt(14);
-                    int col = new Random().nextInt(14);
-                    displayer.display((line+1)+";"+(col+1)+"\n");
-                    if (navalBattle.firebattelship(0, col-1, line-1)) {
-                        displayer.display("and HIT\n");
-                    } else {
-                        displayer.display("and miss\n");
-                    }}
-                else if (n==1){
-                    displayer.display("The bot chose to fire with Cruiser at : ");
-                    int line = new Random().nextInt(14);
-                    int col = new Random().nextInt(14);
-                    displayer.display((line+1)+";"+(col+1)+"\n");
-                    if (navalBattle.firecruiser(0, col-1, line-1)) {
-                        displayer.display("and HIT\n");
-                    } else {
-                        displayer.display("and miss\n");
-                    }}
-                else if (n==2){
-                    displayer.display("The bot chose to fire with Destroyer at : ");
-                    int line = new Random().nextInt(14);
-                    int col = new Random().nextInt(14);
-                    displayer.display((line+1)+";"+(col+1)+"\n");
-                    if (navalBattle.fire(0, col-1, line-1)) {
-                        displayer.display("and HIT\n");
-                    } else {
-                        displayer.display("and miss\n");
-                    }}
-                else if (n==3){
-                    displayer.display("The bot chose to fire with Submarine at : ");
-                    int line = new Random().nextInt(14);
-                    int col = new Random().nextInt(14);
-                    displayer.display((line+1)+";"+(col+1)+"\n");
-                    if (navalBattle.fire(0, col-1, line-1)) {
-                        displayer.display("and HIT\n");
-                    } else {
-                        displayer.display("and miss\n");
-                    }}
-            } catch (ArrayIndexOutOfBoundsException e) {
-                break ini;
+    public void botPlay() throws IOException {
+        int n = (int) (Math.random() * 4);
+        if (n == 0) {
+            displayer.display("The bot chose to fire with Battleship at : ");
+            int line = new Random().nextInt(14);
+            int col = new Random().nextInt(14);
+            displayer.display((line + 1) + ";" + (col + 1) + "\n");
+            if (navalBattle.firebattelship(0, col - 1, line - 1)) {
+                displayer.display("and HIT\n");
+            } else {
+                displayer.display("and miss\n");
             }
+        } else if (n == 1) {
+            displayer.display("The bot chose to fire with Cruiser at : ");
+            int line = new Random().nextInt(14);
+            int col = new Random().nextInt(14);
+            displayer.display((line + 1) + ";" + (col + 1) + "\n");
+            if (navalBattle.firecruiser(0, col - 1, line - 1)) {
+                displayer.display("and HIT\n");
+            } else {
+                displayer.display("and miss\n");
+            }
+        } else if (n == 2) {
+            displayer.display("The bot chose to fire with Destroyer at : ");
+            int line = new Random().nextInt(14);
+            int col = new Random().nextInt(14);
+            displayer.display((line + 1) + ";" + (col + 1) + "\n");
+            if (navalBattle.fire(0, col - 1, line - 1)) {
+                displayer.display("and HIT\n");
+            } else {
+                displayer.display("and miss\n");
+            }
+        } else if (n == 3) {
+            displayer.display("The bot chose to fire with Submarine at : ");
+            int line = new Random().nextInt(14);
+            int col = new Random().nextInt(14);
+            displayer.display((line + 1) + ";" + (col + 1) + "\n");
+            if (navalBattle.fire(0, col - 1, line - 1)) {
+                displayer.display("and HIT\n");
+            } else {
+                displayer.display("and miss\n");
+            }
+        }
     }
 
     /**
@@ -171,13 +139,22 @@ public class GameMaster {
         String out = navalBattle.check();
         while (out == null) {
             if (gamerPlay(cheat)) {
-                //navalBattle.save("save/gamesave");
                 return "quit";
             }
             this.botPlay();
             out = navalBattle.check();
+            scan=scan.reset();
         }
         return out;
+    }
+
+    /**
+     * Method exitGame : Permit to quit
+     * @return boolean
+     */
+    public boolean exitGame() {
+        displayer.display("\nYou quit the Game\n");
+        return true;
     }
 
     /**

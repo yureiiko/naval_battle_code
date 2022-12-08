@@ -22,6 +22,10 @@ public class EnemyGrid extends Grid implements Serializable {
      * Put the String toAdd at given coordinates
      */
     public void update(int l, int c, String toAdd) {
-        mat[l][c] = toAdd;
+        try {
+            mat[l][c] = toAdd;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            return;
+        }
     }
 }
