@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 /**
  * Class EnemyGrid
+ * @author JOSEPH PACES Anoushka
  */
 public class EnemyGrid extends Grid implements Serializable {
 

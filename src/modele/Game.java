@@ -64,9 +64,7 @@ public class Game implements Serializable {
      * @return boolean
      */
     public boolean fire(int gridInd, int targCol, int targLine) {//gridInd permet d'appeler l'indice de l'element du tableau
-        //System.out.println("\nFire");
         boolean hit = gridPlayer[gridInd].fire(targLine,targCol);
-        //System.out.println("\n "+hit);
         if (hit) {
             gridEnemy[gridInd].update(targLine,targCol,"|X");//call the method update and add X if ship hit
             return true;
