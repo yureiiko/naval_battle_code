@@ -138,11 +138,10 @@ public class PlayerGrid extends Grid implements Serializable {
     }
 
     /**
-     * Method fire
+     * Method fire : Return true if there's a boat at the input coordinates
      * @param c int
      * @param l int
      * @return boolean
-     * Return true if there's a boat at the input coordinates
      */
     public boolean fire(int l, int c) {
         try {
@@ -150,8 +149,11 @@ public class PlayerGrid extends Grid implements Serializable {
                 mat[l][c]="|X";
                 return true;
             }
-            if (mat[l][c] == "|X") {
+            if (mat[l][c] == "|O") {
                 return false;
+            }
+            if (mat[l][c] == "|X") {
+                return true;
             }
             mat[l][c]="|O";
             return false;
@@ -161,10 +163,9 @@ public class PlayerGrid extends Grid implements Serializable {
     }
 
     /**
-     * Method copyField
+     * Method copyField : Used in the method aleaBoat to save the grid in case of problem
      * @param parField String [][]
      * @return String [][]
-     * Used in the method aleaBoat to save the grid in case of problem
      */
     private String [][] copyField(String [][] parField) {
         String [][] out = new String[parField.length][parField[0].length];

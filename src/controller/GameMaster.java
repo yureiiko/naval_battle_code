@@ -57,13 +57,12 @@ public class GameMaster {
             if (targCol > 0 && targCol < 15 && targLine > 0 && targLine < 15) {
                 System.out.println("\nGood coordinates\n");
                 boolean res;
-                switch (boat) {
-                    case "B":
-                        res = navalBattle.firebattelship(1, targCol - 1, targLine - 1);
-                    case "C":
-                        res = navalBattle.firecruiser(1, targCol - 1, targLine - 1);
-                    default:
-                        res = navalBattle.fire(1, targCol - 1, targLine - 1);
+                if (boat.equals("B")) {
+                    res = navalBattle.firebattelship(1, targCol - 1, targLine - 1);
+                } else if (boat.equals("C")) {
+                    res = navalBattle.firecruiser(1, targCol - 1, targLine - 1);
+                } else {
+                    res = navalBattle.fire(1, targCol - 1, targLine - 1);
                 }
                 if (res) {
                     displayer.display("\nHIT :D ! \n");
