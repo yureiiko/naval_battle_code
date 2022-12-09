@@ -16,10 +16,10 @@ public class EnemyGrid extends Grid implements Serializable {
     }
 
     /**
-     * Method update
+     * Method update : Put the String toAdd at given coordinates
      * @param l int
      * @param c int
-     * @param toAdd String : Put the String toAdd at given coordinates
+     * @param toAdd String
      */
     public void update(int l, int c, String toAdd) {
         try {

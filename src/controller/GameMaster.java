@@ -92,24 +92,24 @@ public class GameMaster {
         } catch (IllegalArgumentException e) {
             return;
         }
-        int line = new Random().nextInt(14);
-        int col = new Random().nextInt(14);
+        int line = new Random().nextInt(15);
+        int col = new Random().nextInt(15);
         if (valid.get(n).equals("B")) {
             displayer.display("The bot chose to fire with Battleship at : ");
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
-            res = navalBattle.firebattelship(0, col - 1, line - 1);
+            res = navalBattle.firebattelship(0, col, line);
         } else if (valid.get(n).equals("C")) {
             displayer.display("The bot chose to fire with Cruiser at : ");
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
-            res = navalBattle.firecruiser(0, col - 1, line - 1);
+            res = navalBattle.firecruiser(0, col, line);
         } else if (valid.get(n).equals("D")) {
             displayer.display("The bot chose to fire with Destroyer at : ");
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
-            res = navalBattle.fire(0, col - 1, line - 1);
+            res = navalBattle.fire(0, col, line);
         } else {
             displayer.display("The bot chose to fire with Submarine at : ");
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
-            res = navalBattle.fire(0, col - 1, line - 1);
+            res = navalBattle.fire(0, col, line);
         }
         if (res) {
             displayer.display("and HIT\n");
