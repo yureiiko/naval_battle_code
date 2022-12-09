@@ -86,7 +86,12 @@ public class GameMaster {
     public void botPlay() throws IOException {
         ArrayList<String> valid = navalBattle.getPlayerGrid(1).validBoat();
         boolean res;
-        int n = new Random().nextInt(valid.size());
+        int n;
+        try {
+            n = new Random().nextInt(valid.size());
+        } catch (IllegalArgumentException e) {
+            return;
+        }
         int line = new Random().nextInt(14);
         int col = new Random().nextInt(14);
         if (valid.get(n)=="B") {
