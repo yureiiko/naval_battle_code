@@ -97,19 +97,19 @@ public class GameMaster {
         if (valid.get(n).equals("B")) {
             displayer.display("The bot chose to fire with Battleship at : ");
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
-            res = navalBattle.firebattelship(0, col, line);
+            res = navalBattle.firebattelship(0, line, col);
         } else if (valid.get(n).equals("C")) {
             displayer.display("The bot chose to fire with Cruiser at : ");
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
-            res = navalBattle.firecruiser(0, col, line);
+            res = navalBattle.firecruiser(0, line, col);
         } else if (valid.get(n).equals("D")) {
             displayer.display("The bot chose to fire with Destroyer at : ");
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
-            res = navalBattle.fire(0, col, line);
+            res = navalBattle.fire(0, line, col);
         } else {
             displayer.display("The bot chose to fire with Submarine at : ");
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
-            res = navalBattle.fire(0, col, line);
+            res = navalBattle.fire(0, line, col);
         }
         if (res) {
             displayer.display("and HIT\n");
