@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="584b8abe-ced6-4948-bf55-9a966a1fcc29" name="Changes" comment="Change the impact system.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GameMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameMaster.java" afterDir="false" />
+    <list default="true" id="584b8abe-ced6-4948-bf55-9a966a1fcc29" name="Changes" comment="Change the GameMaster.botPlay method">
+      <change beforePath="$PROJECT_DIR$/src/modele/PlayerGrid.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/modele/PlayerGrid.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -226,7 +225,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670583438587</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Change the GameMaster.botPlay method">
+      <created>1670583908825</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1670583908825</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,7 +274,8 @@
     <MESSAGE value="Modification to allow impacts." />
     <MESSAGE value="Minors" />
     <MESSAGE value="Change the impact system." />
-    <option name="LAST_COMMIT_MESSAGE" value="Change the impact system." />
+    <MESSAGE value="Change the GameMaster.botPlay method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change the GameMaster.botPlay method" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

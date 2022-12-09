@@ -16,13 +16,9 @@ public class PlayerGrid extends Grid implements Serializable {
     public PlayerGrid() {
         super.fill();
         aleaBattleship();
-        System.out.println("BattleShip");
         aleaCruiser();
-        System.out.println("Cruiser");
         aleaDestroyer();
-        System.out.println("Destroyer");
         aleaSubmarine();
-        System.out.println("Submarin");
     }
 
     /**
