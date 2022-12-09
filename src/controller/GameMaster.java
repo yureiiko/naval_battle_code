@@ -168,11 +168,11 @@ public class GameMaster {
     }
 
     /**
-     * Method askCheat : Ask to the player if he want to play the cheat mode and see the bot's battlefield.
+     * Method askCheat : Ask to the player if he want to play the cheat mode and see the bot's battlefield
      * @return boolean
      */
     public boolean askCheat() {
-        System.out.println("Do you want to use the cheat mode where you can see the enemy battlefield (y: yes / n : no) :");
+        displayer.display("Do you want to use the cheat mode where you can see the enemy battlefield (y: yes / n : no) :");
         String awnser = this.scan.nextLine();
         switch (awnser) {
             case "y" : return true;
