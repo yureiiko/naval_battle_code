@@ -54,7 +54,7 @@ public class GameMaster {
             int targCol = scan.nextInt();
             displayer.display("Enter the target line : ");
             int targLine = scan.nextInt();
-            if (targCol > 0 && targCol < 15 && targLine > 0 && targLine < 15) {
+            if (targCol > 0 && targCol <= 15 && targLine > 0 && targLine <= 15) {
                 System.out.println("\nGood coordinates\n");
                 boolean res;
                 if (boat.equals("B")) {
