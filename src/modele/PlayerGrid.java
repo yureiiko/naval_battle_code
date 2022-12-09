@@ -22,7 +22,7 @@ public class PlayerGrid extends Grid implements Serializable {
     }
 
     /**
-     * Method aleaBoat : Place on the grid a boat of size length. The boatis identified on the grid by the String boatString
+     * Method aleaBoat : Place on the grid a boat of size length. The boats identified on the grid by the String boatString
      * @param length int
      * @param boatString String
      */
