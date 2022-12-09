@@ -6,6 +6,7 @@ import view.ConsoleDisplay;
 import java.io.EOFException;
 import java.io.IOException;
 import java.sql.Time;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -85,47 +86,32 @@ public class GameMaster {
      * In this method, the bot player choose randomly a place to shoot
      */
     public void botPlay() throws IOException {
-        int n = (int) (Math.random() * 4);
-        if (n == 0) {
+        ArrayList<String> valid = navalBattle.getPlayerGrid(1).validBoat();
+        boolean res;
+        int n = new Random().nextInt(valid.size());
+        int line = new Random().nextInt(14);
+        int col = new Random().nextInt(14);
+        if (valid.get(n)=="B") {
             displayer.display("The bot chose to fire with Battleship at : ");
-            int line = new Random().nextInt(14);
-            int col = new Random().nextInt(14);
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
-            if (navalBattle.firebattelship(0, col - 1, line - 1)) {
-                displayer.display("and HIT\n");
-            } else {
-                displayer.display("and miss\n");
-            }
-        } else if (n == 1) {
+            res = navalBattle.firebattelship(0, col - 1, line - 1);
+        } else if (valid.get(n)=="C") {
             displayer.display("The bot chose to fire with Cruiser at : ");
-            int line = new Random().nextInt(14);
-            int col = new Random().nextInt(14);
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
-            if (navalBattle.firecruiser(0, col - 1, line - 1)) {
-                displayer.display("and HIT\n");
-            } else {
-                displayer.display("and miss\n");
-            }
-        } else if (n == 2) {
+            res = navalBattle.firecruiser(0, col - 1, line - 1);
+        } else if (valid.get(n)=="D") {
             displayer.display("The bot chose to fire with Destroyer at : ");
-            int line = new Random().nextInt(14);
-            int col = new Random().nextInt(14);
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
-            if (navalBattle.fire(0, col - 1, line - 1)) {
-                displayer.display("and HIT\n");
-            } else {
-                displayer.display("and miss\n");
-            }
-        } else if (n == 3) {
+            res = navalBattle.fire(0, col - 1, line - 1);
+        } else {
             displayer.display("The bot chose to fire with Submarine at : ");
-            int line = new Random().nextInt(14);
-            int col = new Random().nextInt(14);
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
-            if (navalBattle.fire(0, col - 1, line - 1)) {
-                displayer.display("and HIT\n");
-            } else {
-                displayer.display("and miss\n");
-            }
+            res = navalBattle.fire(0, col - 1, line - 1);
+        }
+        if (res) {
+            displayer.display("and HIT\n");
+        } else {
+            displayer.display("and miss\n");
         }
     }
 
