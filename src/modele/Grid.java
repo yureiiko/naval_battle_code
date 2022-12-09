@@ -8,8 +8,7 @@ public class Grid {
     String mat[][]= new String[15][15];//Matrice 8*8
 
     /**
-     * Method fill
-     * method that fill the grid
+     * Method fill : method that fill the grid
      */
     public void fill(){
 
@@ -21,8 +20,7 @@ public class Grid {
     }
 
     /**
-     * Method toString
-     * Method that permit to display the grid
+     * Method toString : Method that permit to display the grid
      */
     @Override
     public String toString() {
