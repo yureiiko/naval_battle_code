@@ -22,10 +22,9 @@ public class PlayerGrid extends Grid implements Serializable {
     }
 
     /**
-     * Method aleaBoat
+     * Method aleaBoat : Place on the grid a boat of size length. The boatis identified on the grid by the String boatString
      * @param length int
      * @param boatString String
-     * Place on the grid a boat of size length. The boatis identified on the grid by the String boatString
      */
     public void aleaBoat(int length, String boatString) {
         String [][] save = copyField(this.mat); //voir java duplicate
@@ -56,15 +55,13 @@ public class PlayerGrid extends Grid implements Serializable {
     }
 
     /**
-     * method aleaBattleship
-     * Create a ship of 7 boxes by using the method aleaBoat
+     * method aleaBattleship : Create a ship of 7 boxes by using the method aleaBoat
      */
     public void aleaBattleship() {
         aleaBoat(7, "\u001B[36m|B\u001b[m");
     }
     /**
-     * method aleaCruiser
-     * Create a ship of 5 boxes by using the method aleaboat
+     * method aleaCruiser : Create a ship of 5 boxes by using the method aleaboat
      */
     public void aleaCruiser() {
         for (int i=0;i<2;i++){
@@ -72,16 +69,14 @@ public class PlayerGrid extends Grid implements Serializable {
         aleaBoat(5, "\u001B[34m|C\u001b[m");
     }}
     /**
-     * method aleaDestroyer
-     * Create a ship of 3 boxes by using the method aleaboat
+     * method aleaDestroyer : Create a ship of 3 boxes by using the method aleaboat
      */
     public void aleaDestroyer() {
         for (int i=0;i<3;i++){
         aleaBoat(3, "\u001B[35m|D\u001b[m");
     }}
     /**
-     * method aleaSubmarine
-     * Create a ship of 1 boxes by using the method aleaboat
+     * method aleaSubmarine : Create a ship of 1 boxes by using the method aleaboat
      */
     public void aleaSubmarine() {
         for (int i=0;i<4;i++){
@@ -89,9 +84,8 @@ public class PlayerGrid extends Grid implements Serializable {
     }}
 
     /**
-     * Method check
+     * Method check : Check the grid and return true if there is no more boat
      * @return boolean
-     * Check the grid and return true if there is no more boat
      */
     public boolean check() {
         for (int i = 0; i < 15; i++) {
