@@ -38,8 +38,7 @@ public class GameMaster {
     }
 
     /**
-     * Method gamerPlay
-     * In this method, the human player choose a place to shoot
+     * Method gamerPlay : In this method, the human player choose a boat and a place to shoot. Return true if he want to quit the game.
      */
     public boolean gamerPlay(boolean cheat) throws IOException {
         if (cheat) {
@@ -82,8 +81,7 @@ public class GameMaster {
     }
 
     /**
-     * Method botPlay
-     * In this method, the bot player choose randomly a place to shoot
+     * Method botPlay : In this method, the bot player choose randomly a boat and a place to shoot
      */
     public void botPlay() throws IOException {
         ArrayList<String> valid = navalBattle.getPlayerGrid(1).validBoat();
@@ -116,9 +114,8 @@ public class GameMaster {
     }
 
     /**
-     * Method letsPlay
+     * Method letsPlay : Bot and human player play one at a time. If cheat is true, the player can see the bot's battlefield.
      * @return String
-     * Bot and human player play one at a time
      */
     public String letsPlay(boolean cheat) throws IOException {
         String out = navalBattle.check();
@@ -143,9 +140,8 @@ public class GameMaster {
     }
 
     /**
-     * Method start
+     * Method start : Display rules and return true if the player want to continue
      * @return boolean
-     * Display rules and return true if the player want to continue
      */
     public boolean start(){
         String x;
@@ -167,9 +163,8 @@ public class GameMaster {
     }
 
     /**
-     * Method askCheat
+     * Method askCheat : Ask to the player if he want to play the cheat mode and see the bot's battlefield.
      * @return boolean
-     * Ask to the player if he want to play the cheat mode
      */
     public boolean askCheat() {
         System.out.println("Do you want to use the cheat mode where you can see the enemy battlefield (y: yes / n : no) :");
