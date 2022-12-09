@@ -94,15 +94,15 @@ public class GameMaster {
         }
         int line = new Random().nextInt(14);
         int col = new Random().nextInt(14);
-        if (valid.get(n)=="B") {
+        if (valid.get(n).equals("B")) {
             displayer.display("The bot chose to fire with Battleship at : ");
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
             res = navalBattle.firebattelship(0, col - 1, line - 1);
-        } else if (valid.get(n)=="C") {
+        } else if (valid.get(n).equals("C")) {
             displayer.display("The bot chose to fire with Cruiser at : ");
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
             res = navalBattle.firecruiser(0, col - 1, line - 1);
-        } else if (valid.get(n)=="D") {
+        } else if (valid.get(n).equals("D")) {
             displayer.display("The bot chose to fire with Destroyer at : ");
             displayer.display((line + 1) + ";" + (col + 1) + "\n");
             res = navalBattle.fire(0, col - 1, line - 1);
