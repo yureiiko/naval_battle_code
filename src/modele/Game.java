@@ -104,12 +104,11 @@ public class Game implements Serializable {
      * @return boolean
      */
     public boolean firecruiser(int gridInd, int targCol, int targLine) {//gridInd permet d'appeler l'indice de l'element du tableau
-        boolean out1 = this.fire(gridInd, targCol, targLine);
         boolean out2 = this.fire(gridInd, targCol, targLine-1);
         boolean out3 = this.fire(gridInd, targCol-1, targLine);
         boolean out4 = this.fire(gridInd, targCol+1, targLine);
         boolean out5 = this.fire(gridInd, targCol, targLine+1);
-        return out1||out2||out3||out4||out5;
+        return out2||out3||out4||out5;
     }
 
     /**

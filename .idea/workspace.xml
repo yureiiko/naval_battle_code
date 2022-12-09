@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="584b8abe-ced6-4948-bf55-9a966a1fcc29" name="Changes" comment="Minor modification">
-      <change beforePath="$PROJECT_DIR$/src/controller/GameMaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameMaster.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ConsoleDisplay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ConsoleDisplay.java" afterDir="false" />
-    </list>
+    <list default="true" id="584b8abe-ced6-4948-bf55-9a966a1fcc29" name="Changes" comment="Minor modification" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -240,7 +237,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670584144343</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Javadoc update modification">
+      <created>1670584506402</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1670584506402</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Minor modification">
+      <created>1670584626089</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1670584626089</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -282,18 +293,8 @@
     <MESSAGE value="Minors" />
     <MESSAGE value="Change the impact system." />
     <MESSAGE value="Change the GameMaster.botPlay method" />
+    <MESSAGE value="Javadoc update modification" />
     <MESSAGE value="Minor modification" />
     <option name="LAST_COMMIT_MESSAGE" value="Minor modification" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/test.java</url>
-          <line>3</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
