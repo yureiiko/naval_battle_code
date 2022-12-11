@@ -1,8 +1,8 @@
 package modele;
 
 /**
- * @author Mouhamad Zainab
  * Class Grid
+ * @author Mouhamad Zainab
  */
 public class Grid {
     String mat[][]= new String[15][15];//Matrice 8*8
